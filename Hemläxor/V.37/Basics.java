@@ -5,6 +5,8 @@ public class Basics {
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Vad heter du?");
-		String namn = input.nextLine();
+		String name = input.nextLine();
+		System.out.println("Hur gammal är du?");
+		String age = input.nextLine();
 	}
 }
