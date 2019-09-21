@@ -16,10 +16,7 @@ public class V38 {
 		int nr9 = input.nextInt();
 		int nr10 = input.nextInt();
 		
-		System.out.println();
-		System.out.println((nr1 + nr2 + nr3 + nr4 + nr5 + nr6 + nr7 +nr8 + nr9 + nr10) /10);
 		
-		
-		
+		System.out.print("Medelvärde: " + (nr1 + nr2 + nr3 + nr4 + nr5 + nr6 + nr7 +nr8 + nr9 + nr10) /10f);
 	}
 }
