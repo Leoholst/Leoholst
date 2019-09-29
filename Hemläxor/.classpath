@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="V.37"/>
 	<classpathentry kind="src" path="V.38"/>
+	<classpathentry kind="src" path="V.39"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
