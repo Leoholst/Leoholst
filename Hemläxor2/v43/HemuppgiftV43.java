@@ -57,24 +57,30 @@ public class HemuppgiftV43 {
 			return num;
 	}
 	/**
-	 * Det känns hopplöst
+	 * Denna metoden tar in ett ord på svenska och skriver ut det på rövarspråket.
+	 * Först tar jag in ett svenskt ord, str. Sedan har jag en variabel word vilket kommer vara det svenska ordet i rövarspråk.
+	 * Jag har sedan en for-loop i samma stil som i count metoden. I for-loopen har jag en if-sats där jag kollar om bokstaven i ordet är någon av alla konsonanter i det svenska alfabetet, med hjälp av eller-tecknet.
+	 * Om det är sant ändrar jag word till "bokstaven o bokstaven" t.ex. b blir bob.
+	 * Jag avslutar for-loopen med else där word bara blir bokstaven alltså ändras inte bokstaven.
 	 * @param str
-	 * @return
+	 * @return returnerar word som efter for-loopen är det fullständiga rövarspråk ordet.
 	 */
 	public static String sjorovare(String str) {
 		Scanner input = new Scanner(System.in);
 			System.out.println("-------------------------------------");
 			System.out.println("Skriv en mening!");
-			str = input.nextLine();
 			
-			int num = 0;
+			str = input.nextLine().toLowerCase();
+			String word = "";
+			
 			for(int i = 0; i < str.length(); i++) {
-				if(str.charAt(i) == 0) {
-					System.out.println(str.replace("b", "bob"));
+				if(str.charAt(i) == 'b' || str.charAt(i) == 'c' || str.charAt(i) == 'd' || str.charAt(i) == 'f' || str.charAt(i) == 'g' || str.charAt(i) == 'h' || str.charAt(i) == 'j' || str.charAt(i) == 'k' || str.charAt(i) == 'l' || str.charAt(i) == 'm' || str.charAt(i) == 'n' || str.charAt(i) == 'p' || str.charAt(i) == 'q' || str.charAt(i) == 'r' || str.charAt(i) == 's' || str.charAt(i) == 't' || str.charAt(i) == 'v' || str.charAt(i) == 'w' || str.charAt(i) == 'x' || str.charAt(i) == 'y' || str.charAt(i) == 'z') {
+					word = word + str.charAt(i) + "o" + str.charAt(i);
+				}
+				else {
+					word = word + str.charAt(i);
 				}
 			}	
-			
-			//System.out.println(str.replace(str, str));
-		return str;
+		return word;
 	}
 }
