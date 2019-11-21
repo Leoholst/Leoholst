@@ -14,7 +14,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 1
 	 * This method converts fahrenheit to celsius.
-	 * @param fahrenheit
+	 * @param fahrenheit (F)
 	 * @return
 	 */
 	public static double fahrenheitToCelsius(double fahrenheit) {
@@ -23,7 +23,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 2
 	 * This method converts kelvin to celsuis.
-	 * @param kelvin
+	 * @param kelvin (K)
 	 * @return
 	 */
 	public static double kelvinToCelsius(double kelvin) {
@@ -32,8 +32,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 3
 	 *  This method calculates the fluidpressure on a fluid by a deep.
-	 * @param fluid
-	 * @param deep
+	 * @param fluid The fluid substance
+	 * @param deep meter(m)
 	 * @return
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
@@ -42,7 +42,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 4
 	 *  This method calculates the pressure under water by a specific deep.
-	 * @param deep
+	 * @param deep meter(m)
 	 * @return
 	 */
 	public static double pressureUnderWater(double deep) {
@@ -51,8 +51,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 5
 	 *  This method uses the formula for kinetic energy to calculate the impetus.  
-	 * @param mass
-	 * @param velocity
+	 * @param mass kilogram(kg)
+	 * @param velocity meter/second(m/s)
 	 * @return
 	 */
 	public static double kineticEnergy(double mass, double velocity) {
@@ -61,8 +61,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 6
 	 *  This method uses the formula for potential energy to calculate the impetus.
-	 * @param mass
-	 * @param height
+	 * @param mass kilogram(kg)
+	 * @param height meter(m)
 	 * @return
 	 */
 	public static double potentialEnergy(double mass, double height) {
@@ -71,7 +71,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 7
 	 *  The method calculates the speed when falling from a specific height.
-	 * @param height
+	 * @param height meter(m)
 	 * @return
 	 */
 	public static double fallSpeed(double height) {
@@ -80,8 +80,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 8
 	 *  The method determines delta.
-	 * @param first
-	 * @param last
+	 * @param first The first number
+	 * @param last The last number
 	 * @return
 	 */
 	public static double delta(double first, double last) {
@@ -90,8 +90,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 9
 	 *  This method converts a fluids volume to mass.
-	 * @param fluid
-	 * @param volume
+	 * @param fluid The fluid substance
+	 * @param volume cubic meter (Math.pow(meter,3))
 	 * @return
 	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
@@ -100,8 +100,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 10
 	 *  The method converts the volume of a gas to mass.
-	 * @param gas
-	 * @param volume
+	 * @param gas The Gas substance
+	 * @param volume cubic meter (Math.pow(meter,3)
 	 * @return
 	 */
 	public static double volumeToMass(GasTable gas, double volume) {
@@ -110,36 +110,52 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 11
 	 *  The method converts the volume of a solid substance to mass.
-	 * @param solid
-	 * @param volume
+	 * @param solid The solid substance
+	 * @param volume cubic meter (Math.pow(meter,3))
 	 * @return
 	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
 		return (solid.density * volume);
 	}
 	
-	
+	/** Method 12
+	 *  The method calculates velocity through the svt formula.
+	 * @param distance Meter(m)
+	 * @param time Second(s)
+	 * @return
+	 */
 	public static double svtVelocity(double distance, double time) {
 		return (distance / time);
-	//svtVelocity(10,5) => 2
 	}
 	
-	
+	/** Method 13
+	 *  The method calculates distance through the svt formula.
+	 * @param velocity Meter/Second(m/s)
+	 * @param time Second(s)
+	 * @return
+	 */
 	public static double svtDistance(double velocity, double time) {
 		return (velocity * time);
-	//svtDistance(10,5) => 50
 	}
 	
-	
+	/** Method 14
+	 *  The method calculates Time through the svt formula.
+	 * @param distance Meter(m)
+	 * @param velocity Meter/second(m/s)
+	 * @return
+	 */
 	public static double svtTime(double distance, double velocity) {
 		return (velocity / distance);
-	//svtTime(10,2) => 5
 	}
 	
-	
+	/** Method 15
+	 *  The method calculate work through wfs formula.
+	 * @param force Newton(N)
+	 * @param distance Meter(m)
+	 * @return
+	 */
 	public static double work(double force, double distance) {
 		return (force * distance);
-	//work(50,10) => 500
 	}
 	
 	
