@@ -8,8 +8,13 @@ public class JavaPhysicsLibrary {
 	static double c = 299792458;
 	static double g_swe = 9.82;
 	
+	// All units are determined in SI-units, if nothing else is stated.
+	
 	public static void main(String[] args) {
-		
+		//Question 1: 60 cubic decimeter = 0,06 cubic meter
+		System.out.println(volumeToMass(SolidTable.IRON, 0.06));
+		//Question 2: Tomas is running with 2,7m/s in 50 minutes.
+		System.out.println(svtDistance(2.7, 50));
 	}
 	
 	/** Method 1
