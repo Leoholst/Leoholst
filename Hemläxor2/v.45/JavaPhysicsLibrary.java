@@ -13,8 +13,12 @@ public class JavaPhysicsLibrary {
 	public static void main(String[] args) {
 		//Question 1: 60 cubic decimeter = 0,06 cubic meter
 		System.out.println(volumeToMass(SolidTable.IRON, 0.06));
-		//Question 2: Tomas is running with 2,7m/s in 50 minutes.
-		System.out.println(svtDistance(2.7, 50));
+		//Question 2: Tomas is running with 2,7m/s in 50 minutes(50 minutes = 3000 seconds).
+		System.out.println(svtDistance(2.7, 3000));
+		//Question 3: How much energy is needed to heat 4 liters (4 liters = 4 kg) of water from 22 degrees to the boiling point.
+		System.out.println(heat(FluidTable.WATER, 4, 22));
+		//Question 4: What is the pressure 75 meters under the surface.
+		System.out.println(pressureUnderWater(75));
 	}
 	
 	/** Method 1
