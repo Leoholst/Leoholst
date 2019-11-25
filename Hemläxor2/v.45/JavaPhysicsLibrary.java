@@ -13,7 +13,7 @@ public class JavaPhysicsLibrary {
 	}
 	
 	/** Method 1
-	 * This method converts fahrenheit to celsius.
+	 * This method converts Fahrenheit to Celsius.
 	 * @param fahrenheit (F)
 	 * @return
 	 */
@@ -22,7 +22,7 @@ public class JavaPhysicsLibrary {
 	}
 	
 	/** Method 2
-	 * This method converts kelvin to celsuis.
+	 * This method converts Kelvin to Celsuis.
 	 * @param kelvin (K)
 	 * @return
 	 */
@@ -31,7 +31,7 @@ public class JavaPhysicsLibrary {
 	}
 	
 	/** Method 3
-	 *  This method calculates the fluidpressure on a fluid by a deep.
+	 *  This method calculates the fluid pressure on a fluid by a deep.
 	 * @param fluid The fluid substance
 	 * @param deep meter(m)
 	 * @return
@@ -52,7 +52,7 @@ public class JavaPhysicsLibrary {
 	/** Method 5
 	 *  This method uses the formula for kinetic energy to calculate the impetus.  
 	 * @param mass kilogram(kg)
-	 * @param velocity meter/second(m/s)
+	 * @param velocity Meter/Seconds(m/s)
 	 * @return
 	 */
 	public static double kineticEnergy(double mass, double velocity) {
@@ -79,7 +79,7 @@ public class JavaPhysicsLibrary {
 	}
 	
 	/** Method 8
-	 *  The method determines delta.
+	 *  The method determines delta, which is the difference between two numbers.
 	 * @param first The first number
 	 * @param last The last number
 	 * @return
@@ -121,7 +121,7 @@ public class JavaPhysicsLibrary {
 	/** Method 12
 	 *  The method calculates velocity through the svt formula.
 	 * @param distance Meter(m)
-	 * @param time Second(s)
+	 * @param time Seconds(s)
 	 * @return
 	 */
 	public static double svtVelocity(double distance, double time) {
@@ -130,8 +130,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 13
 	 *  The method calculates distance through the svt formula.
-	 * @param velocity Meter/Second(m/s)
-	 * @param time Second(s)
+	 * @param velocity Meter/Seconds(m/s)
+	 * @param time Seconds(s)
 	 * @return
 	 */
 	public static double svtDistance(double velocity, double time) {
@@ -141,7 +141,7 @@ public class JavaPhysicsLibrary {
 	/** Method 14
 	 *  The method calculates Time through the svt formula.
 	 * @param distance Meter(m)
-	 * @param velocity Meter/second(m/s)
+	 * @param velocity Meter/Seconds(m/s)
 	 * @return
 	 */
 	public static double svtTime(double distance, double velocity) {
@@ -158,33 +158,55 @@ public class JavaPhysicsLibrary {
 		return (force * distance);
 	}
 	
-	
+	/** Method 16
+	 *  This method calculates power through dividing work by time.
+	 * @param work W(Nm)
+	 * @param time Seconds(s)
+	 * @return
+	 */
 	public static double power(double work, double time) {
 		return (work / time);
-	//power(1000,2) => 500
 	}
 	
-	
+	/** Method 17
+	 *  The method determines the heat of a solid substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
+	 * @param solid The solid Substance
+	 * @param mass kilogram(kg)
+	 * @param deltaT The difference in temperature in degrees(C)
+	 * @return
+	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
 		return (solid.heatCapacity * mass * deltaT);
-	//heat(SolidTable.IRON,1,2) => 900
 	}
 	
-	
+	/** Method 18
+	 * The method determines the heat of a fluid substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
+	 * @param fluid The fluid substance
+	 * @param mass kilogram(kg)
+	 * @param deltaT The difference in temperature in degrees(C)
+	 * @return
+	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
 		return (fluid.heatCapacity * mass * deltaT);
-	//heat(FluidTable.WATER,1,10) => 41900
 	}
 	
-	
+	/** Method 19
+	 *  The method determines the heat of a gas substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
+	 * @param gas The gas substance
+	 * @param mass kilogram(kg)
+	 * @param deltaT The difference in temperature in degrees(C)
+	 * @return
+	 */
 	public static double heat(GasTable gas, double mass, double deltaT) {
 		return (gas.heatCapacity * mass * deltaT);
-	//heat(GasTable.AIR,1,1) => 1010
 	}
 	
-	
+	/** Method 20
+	 *  This method calculates how high an object with an velocity reaches.
+	 * @param velocity Meter/Seconds(m/s)
+	 * @return
+	 */
 	public static double velocityToHeight(double velocity) {
 		return (Math.pow(Math.sin(1.57079633), 2) * Math.pow(velocity, 2)/ (2 * g_swe));
-	//velocityToHeight(9.82) => 4.91
 	}
 }
