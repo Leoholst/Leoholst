@@ -15,10 +15,14 @@ public class JavaPhysicsLibrary {
 		System.out.println(volumeToMass(SolidTable.IRON, 0.06));
 		//Question 2: Tomas is running with 2,7m/s in 50 minutes(50 minutes = 3000 seconds).
 		System.out.println(svtDistance(2.7, 3000));
-		//Question 3: How much energy is needed to heat 4 liters (4 liters = 4 kg) of water from 22 degrees to the boiling point.
-		System.out.println(heat(FluidTable.WATER, 4, 22));
+		//Question 3: How much energy is needed to heat 4 liters (4 liters = 4 kg) of water from 22 degrees to the boiling point, which is 100 degrees.
+		System.out.println(heat(FluidTable.WATER, 4, 78));
 		//Question 4: What is the pressure 75 meters under the surface.
 		System.out.println(pressureUnderWater(75));
+		//Question 5: Tomas throws a ball with the velocity 60 km/h or 16,666...7 m/s.
+		System.out.println(velocityToHeight(16.6666666667));
+		//Question 6:
+		System.out.println();
 	}
 	
 	/** Method 1
@@ -217,5 +221,15 @@ public class JavaPhysicsLibrary {
 	 */
 	public static double velocityToHeight(double velocity) {
 		return (Math.pow(Math.sin(1.57079633), 2) * Math.pow(velocity, 2)/ (2 * g_swe));
+	}
+	
+	/** Method 21
+	 *  This method calculates acceleration by dividing velocity with time.
+	 * @param velocity
+	 * @param time
+	 * @return
+	 */
+	public static double acceleration(double velocity, double time) {
+		return (velocity/time);
 	}
 }
