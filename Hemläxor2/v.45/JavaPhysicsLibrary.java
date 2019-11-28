@@ -21,8 +21,8 @@ public class JavaPhysicsLibrary {
 		System.out.println(pressureUnderWater(75));
 		//Question 5: Tomas throws a ball with the velocity 60 km/h or 16,666...7 m/s.
 		System.out.println(velocityToHeight(16.6666666667));
-		//Question 6:
-		System.out.println();
+		//Question 6: 
+		System.out.println(acceleration(27.7777777778, 4.8) + powerMA(735, ));
 	}
 	
 	/** Method 1
@@ -225,11 +225,21 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 21
 	 *  This method calculates acceleration by dividing velocity with time.
-	 * @param velocity
-	 * @param time
+	 * @param velocity Meter/Seconds (m/s)
+	 * @param time Second (s)
 	 * @return
 	 */
 	public static double acceleration(double velocity, double time) {
 		return (velocity/time);
+	}
+	
+	/** Method 22
+	 *  This method calculates power through mass times acceleration.
+	 * @param mass Kilograms (kg)
+	 * @param acceleration Math.pow(Meter/Seconds, 2) (Math.pow(m/s, 2))
+	 * @return
+	 */
+	public static double powerMA(double mass, double acceleration) {
+		return (mass * acceleration);
 	}
 }
