@@ -21,8 +21,8 @@ public class JavaPhysicsLibrary {
 		System.out.println(pressureUnderWater(75));
 		//Question 5: Tomas throws a ball with the velocity 60 km/h or 16,666...7 m/s.
 		System.out.println(velocityToHeight(16.6666666667));
-		//Question 6: 
-		System.out.println(acceleration(27.7777777778, 4.8) + powerMA(735, ));
+		//Question 6: PowerFV
+		System.out.println();
 	}
 	
 	/** Method 1
@@ -46,7 +46,7 @@ public class JavaPhysicsLibrary {
 	/** Method 3
 	 *  This method calculates the fluid pressure on a fluid by a deep.
 	 * @param fluid The fluid substance
-	 * @param deep meter(m)
+	 * @param deep Meter (m)
 	 * @return
 	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
@@ -55,7 +55,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 4
 	 *  This method calculates the pressure under water by a specific deep.
-	 * @param deep meter(m)
+	 * @param deep Meter (m)
 	 * @return
 	 */
 	public static double pressureUnderWater(double deep) {
@@ -64,8 +64,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 5
 	 *  This method uses the formula for kinetic energy to calculate the impetus.  
-	 * @param mass kilogram(kg)
-	 * @param velocity Meter/Seconds(m/s)
+	 * @param mass kilogram (kg)
+	 * @param velocity Meter/Second (m/s)
 	 * @return
 	 */
 	public static double kineticEnergy(double mass, double velocity) {
@@ -74,8 +74,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 6
 	 *  This method uses the formula for potential energy to calculate the impetus.
-	 * @param mass kilogram(kg)
-	 * @param height meter(m)
+	 * @param mass Kilogram (kg)
+	 * @param height Meter (m)
 	 * @return
 	 */
 	public static double potentialEnergy(double mass, double height) {
@@ -84,7 +84,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 7
 	 *  The method calculates the speed when falling from a specific height.
-	 * @param height meter(m)
+	 * @param height meter (m)
 	 * @return
 	 */
 	public static double fallSpeed(double height) {
@@ -133,8 +133,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 12
 	 *  The method calculates velocity through the svt formula.
-	 * @param distance Meter(m)
-	 * @param time Seconds(s)
+	 * @param distance Meter (m)
+	 * @param time Second (s)
 	 * @return
 	 */
 	public static double svtVelocity(double distance, double time) {
@@ -143,8 +143,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 13
 	 *  The method calculates distance through the svt formula.
-	 * @param velocity Meter/Seconds(m/s)
-	 * @param time Seconds(s)
+	 * @param velocity Meter/Second (m/s)
+	 * @param time Second (s)
 	 * @return
 	 */
 	public static double svtDistance(double velocity, double time) {
@@ -153,8 +153,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 14
 	 *  The method calculates Time through the svt formula.
-	 * @param distance Meter(m)
-	 * @param velocity Meter/Seconds(m/s)
+	 * @param distance Meter (m)
+	 * @param velocity Meter/Second (m/s)
 	 * @return
 	 */
 	public static double svtTime(double distance, double velocity) {
@@ -163,8 +163,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 15
 	 *  The method calculate work through wfs formula.
-	 * @param force Newton(N)
-	 * @param distance Meter(m)
+	 * @param force Newton (N)
+	 * @param distance Meter (m)
 	 * @return
 	 */
 	public static double work(double force, double distance) {
@@ -173,8 +173,8 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 16
 	 *  This method calculates power through dividing work by time.
-	 * @param work W(Nm)
-	 * @param time Seconds(s)
+	 * @param work NewtonMeter (Nm)
+	 * @param time Second (s)
 	 * @return
 	 */
 	public static double power(double work, double time) {
@@ -184,8 +184,8 @@ public class JavaPhysicsLibrary {
 	/** Method 17
 	 *  The method determines the heat of a solid substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
 	 * @param solid The solid Substance
-	 * @param mass kilogram(kg)
-	 * @param deltaT The difference in temperature in degrees(C)
+	 * @param mass kilogram (kg)
+	 * @param deltaT The difference in temperature in degrees (C)
 	 * @return
 	 */
 	public static double heat(SolidTable solid, double mass, double deltaT) {
@@ -195,8 +195,8 @@ public class JavaPhysicsLibrary {
 	/** Method 18
 	 * The method determines the heat of a fluid substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
 	 * @param fluid The fluid substance
-	 * @param mass kilogram(kg)
-	 * @param deltaT The difference in temperature in degrees(C)
+	 * @param mass kilogram (kg)
+	 * @param deltaT The difference in temperature in degrees (C)
 	 * @return
 	 */
 	public static double heat(FluidTable fluid, double mass, double deltaT) {
@@ -206,8 +206,8 @@ public class JavaPhysicsLibrary {
 	/** Method 19
 	 *  The method determines the heat of a gas substance by calculating the heat capacity of the substance, times the mass, times delta temperature.
 	 * @param gas The gas substance
-	 * @param mass kilogram(kg)
-	 * @param deltaT The difference in temperature in degrees(C)
+	 * @param mass kilogram (kg)
+	 * @param deltaT The difference in temperature in degrees (C)
 	 * @return
 	 */
 	public static double heat(GasTable gas, double mass, double deltaT) {
@@ -216,7 +216,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 20
 	 *  This method calculates how high an object with an velocity reaches.
-	 * @param velocity Meter/Seconds(m/s)
+	 * @param velocity Meter/Second (m/s)
 	 * @return
 	 */
 	public static double velocityToHeight(double velocity) {
@@ -225,7 +225,7 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 21
 	 *  This method calculates acceleration by dividing velocity with time.
-	 * @param velocity Meter/Seconds (m/s)
+	 * @param velocity Meter/Second (m/s)
 	 * @param time Second (s)
 	 * @return
 	 */
@@ -235,11 +235,21 @@ public class JavaPhysicsLibrary {
 	
 	/** Method 22
 	 *  This method calculates power through mass times acceleration.
-	 * @param mass Kilograms (kg)
-	 * @param acceleration Math.pow(Meter/Seconds, 2) (Math.pow(m/s, 2))
+	 * @param mass Kilogram (kg)
+	 * @param acceleration Math.pow(Meter/Second, 2) (Math.pow(m/s, 2))
 	 * @return
 	 */
-	public static double powerMA(double mass, double acceleration) {
+	public static double forceMA(double mass, double acceleration) {
 		return (mass * acceleration);
+	}
+	
+	/** Method 23
+	 *  This method calculates Power through force times velocity.
+	 * @param force Newton (N)
+	 * @param velocity Meter/Second (m/s)
+	 * @return
+	 */
+	public static double powerFV(double force, double velocity) {
+		return (force * velocity);
 	}
 }
