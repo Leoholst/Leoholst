@@ -329,4 +329,14 @@ public class JavaPhysicsLibrary {
 	public static double hookesLaw(double springConstant, double length) {
 		return (springConstant*length);
 	}
+	
+	/** Method 30
+	 *  This method calculates the efficiency by dividing the useful power and the added power.
+	 * @param usefulPower Watt (W)
+	 * @param addedPower Watt (W)
+	 * @return
+	 */
+	public static double efficiency(double usefulPower, double addedPower) {
+		return (usefulPower/addedPower);
+	}
 }
