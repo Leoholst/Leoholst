@@ -303,4 +303,14 @@ public class JavaPhysicsLibrary {
 	public static double impulse(double force, double time) {
 		return (force*time);
 	}
+	
+	/** Method 28
+	 *  This method calculates the pressure by dividing force with the area
+	 * @param force Newton (N)
+	 * @param area Math.pow(meter, 2)
+	 * @return
+	 */
+	public static double pressure(double force, double area) {
+		return (force/area);
+	}
 }
