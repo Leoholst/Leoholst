@@ -319,4 +319,14 @@ public class JavaPhysicsLibrary {
 	public static double pressure(double force, double area) {
 		return (force/area);
 	}
+	
+	/** Method 29
+	 *  This method uses Hookes law formula through the spring constant times the length
+	 * @param springConstant Newton/Meter (N/m)
+	 * @param length Meter (m)
+	 * @return
+	 */
+	public static double hookesLaw(double springConstant, double length) {
+		return (springConstant*length);
+	}
 }
