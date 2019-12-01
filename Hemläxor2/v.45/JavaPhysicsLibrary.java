@@ -283,4 +283,14 @@ public class JavaPhysicsLibrary {
 	public static double density(double mass, double volume) {
 		return (mass/volume);
 	}
+	
+	/** Method 26
+	 *  This method calculates the momentum through mass times velocity
+	 * @param mass Kilogram (kg)
+	 * @param velocity Meter/Second (m/s)
+	 * @return
+	 */
+	public static double momentum(double mass, double velocity) {
+		return (mass*velocity);
+	}
 }
