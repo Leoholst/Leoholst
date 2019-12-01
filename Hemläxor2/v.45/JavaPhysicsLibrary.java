@@ -13,18 +13,21 @@ public class JavaPhysicsLibrary {
 	public static void main(String[] args) {
 		//Question 1: 60 cubic decimeter = 0,06 cubic meter
 		System.out.println(volumeToMass(SolidTable.IRON, 0.06));
+		
 		//Question 2: Tomas is running with 2,7m/s in 50 minutes(50 minutes = 3000 seconds).
 		System.out.println(svtDistance(2.7, 3000));
+		
 		//Question 3: How much energy is needed to heat 4 liters (4 liters = 4 kg) of water from 22 degrees to the boiling point, which is 100 degrees.
 		System.out.println(heat(FluidTable.WATER, 4, 78));
+		
 		//Question 4: What is the pressure 75 meters under the surface.
 		System.out.println(pressureUnderWater(75));
+		
 		//Question 5: Tomas throws a ball with the velocity 60 km/h or 16,666...7 m/s.
 		System.out.println(velocityToHeight(16.6666666667));
+		
 		//Question 6: How much power is needed for a car with the mass 735kg to drive from 0 to 100km/h in 4.8s?
 		System.out.println(powerFV(4253.47, 27.777));
-		//Question 7: 
-		System.out.println();
 	}
 	
 	/** Method 1
@@ -253,5 +256,15 @@ public class JavaPhysicsLibrary {
 	 */
 	public static double powerFV(double force, double velocity) {
 		return (force * velocity);
+	}
+	
+	/** Method 24
+	 *  This method calculates the quota of two energy's.
+	 * @param startEnergy The amount of energy at the start in Joule (J)
+	 * @param energy The amount of energy after the start in Joule (J)
+	 * @return
+	 */
+	public static double energyQuota(double startEnergy, double energy) {
+		return (startEnergy/energy);
 	}
 }
