@@ -28,6 +28,12 @@ public class JavaPhysicsLibrary {
 		
 		//Question 6: How much power is needed for a car with the mass 735kg to drive from 0 to 100km/h in 4.8s?
 		System.out.println(powerFV(4253.47, 27.777));
+		
+		//Question 7: The amount of bounces a ball with the mass 1kg bounces when dropped from the height 12m and loses 1% of the energy with every bounce.
+		System.out.println(energyQuota(117.84, 4.91));
+				
+		//Question 8:
+		System.out.println();
 	}
 	
 	/** Method 1
