@@ -21,7 +21,9 @@ public class JavaPhysicsLibrary {
 		System.out.println(pressureUnderWater(75));
 		//Question 5: Tomas throws a ball with the velocity 60 km/h or 16,666...7 m/s.
 		System.out.println(velocityToHeight(16.6666666667));
-		//Question 6: PowerFV
+		//Question 6: How much power is needed for a car with the mass 735kg to drive from 0 to 100km/h in 4.8s?
+		System.out.println(powerFV(4253.47, 27.777));
+		//Question 7: 
 		System.out.println();
 	}
 	
