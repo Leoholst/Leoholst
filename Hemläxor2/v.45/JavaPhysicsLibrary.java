@@ -339,4 +339,15 @@ public class JavaPhysicsLibrary {
 	public static double efficiency(double usefulPower, double addedPower) {
 		return (usefulPower/addedPower);
 	}
+	
+	/** Method 31
+	 *  This method uses the impulse law which is mass times velocity subtracted with mass times the velocity at the start.
+	 * @param mass Kilogram (kg)
+	 * @param velocity Meter/Second (m/s)
+	 * @param startVelocity Meter/Second (m/s)
+	 * @return
+	 */
+	public static double impulseLaw(double mass, double velocity, double startVelocity) {
+		return (mass*velocity-mass*startVelocity);
+	}
 }
