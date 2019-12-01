@@ -293,4 +293,14 @@ public class JavaPhysicsLibrary {
 	public static double momentum(double mass, double velocity) {
 		return (mass*velocity);
 	}
+	
+	/** Method 27
+	 * This method calculates the impulse through force times time
+	 * @param force Newton (N)
+	 * @param time Second (s)
+	 * @return
+	 */
+	public static double impulse(double force, double time) {
+		return (force*time);
+	}
 }
