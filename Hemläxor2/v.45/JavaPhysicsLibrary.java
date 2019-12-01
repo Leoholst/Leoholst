@@ -32,8 +32,11 @@ public class JavaPhysicsLibrary {
 		//Question 7: The amount of bounces a ball with the mass 1kg bounces when dropped from the height 12m and loses 1% of the energy with every bounce.
 		System.out.println(energyQuota(117.84, 4.91));
 				
-		//Question 8: How much density does a aquarium with the mass 10kg which contains 5L
+		//Question 8: How much density does a aquarium with the mass 10kg which contains 5L?
 		System.out.println(density(10, 5));
+		
+		//Question 9: How much momentum does Bill who weighs 50kg have when he rides a very light bike with 36km/h?
+		System.out.println(momentum(50, 10));
 	}
 	
 	/** Method 1
