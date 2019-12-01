@@ -273,4 +273,14 @@ public class JavaPhysicsLibrary {
 	public static double energyQuota(double startEnergy, double energy) {
 		return (startEnergy/energy);
 	}
+	
+	/** Method 25
+	 *  This method calculates the density by dividing mass with volume
+	 * @param mass Kilogram (kg)
+	 * @param volume Liter (l)
+	 * @return
+	 */
+	public static double density(double mass, double volume) {
+		return (mass/volume);
+	}
 }
