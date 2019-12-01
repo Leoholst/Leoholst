@@ -37,6 +37,9 @@ public class JavaPhysicsLibrary {
 		
 		//Question 9: How much momentum does Bill who weighs 50kg have when he rides a very light bike with 36km/h?
 		System.out.println(momentum(50, 10));
+		
+		//Question 10: How much pressure does a table with the area 2 square meters have when Bill stands on one foot with 18N?
+		System.out.println(pressure(18, 2));
 	}
 	
 	/** Method 1
