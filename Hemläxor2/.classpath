@@ -6,5 +6,12 @@
 	<classpathentry kind="src" path="extra"/>
 	<classpathentry kind="src" path="v43"/>
 	<classpathentry kind="src" path="v.45"/>
+	<classpathentry kind="src" path="v49"/>
+	<classpathentry kind="src" path="v3"/>
+	<classpathentry kind="src" path="v4Sortering"/>
+	<classpathentry kind="src" path="v5"/>
+	<classpathentry kind="src" path="repetion"/>
+	<classpathentry kind="src" path="bonusUppgifter"/>
+	<classpathentry kind="src" path="v12Talspelet"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
