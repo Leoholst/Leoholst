@@ -3,13 +3,14 @@ import java.util.Random;
 
 public class Talspelet {
 	public static Scanner input = new Scanner(System.in);
-	public static int whatDifficulty = input.nextInt();
+	public static int whatDifficulty = 0;
 
 	public static void main(String[] args) {
 		System.out.println(greetings());
 		System.out.println(System.lineSeparator() + instructions());
 		System.out.println(System.lineSeparator() + difficultyInformation());
 		System.out.println(System.lineSeparator() + chooseDifficulty());
+		whatDifficulty = input.nextInt();
 		if(whatDifficulty==1) {
 			System.out.println(System.lineSeparator() + easyDifficulty());
 		}
