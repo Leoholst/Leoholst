@@ -27,7 +27,7 @@ public class Talspelet {
 		System.out.println(System.lineSeparator() + startGuessing());
 		yourGuesses = input.nextInt();
 		
-		if(easyDifficulty||mediumDifficulty||hardDifficulty == yourGuesses) {
+		if((easyDifficulty == yourGuesses)||(mediumDifficulty == yourGuesses)||(hardDifficulty == yourGuesses)) {
 			
 		}
 	}
