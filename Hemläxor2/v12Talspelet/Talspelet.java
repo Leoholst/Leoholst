@@ -4,7 +4,11 @@ import java.util.Random;
 public class Talspelet {
 	public static Scanner input = new Scanner(System.in);
 	public static int whatDifficulty = 0;
-
+	public static int easyDifficulty = 0;
+	public static int mediumDifficulty = 0;
+	public static int hardDifficulty = 0;
+	public static int yourGuesses = 0;
+	
 	public static void main(String[] args) {
 		System.out.println(greetings());
 		System.out.println(System.lineSeparator() + instructions());
@@ -20,6 +24,8 @@ public class Talspelet {
 		else if(whatDifficulty==3){
 			System.out.println(System.lineSeparator() + hardDifficulty());
 		}
+		System.out.println(System.lineSeparator() + startGuessing());
+		yourGuesses = input.nextInt();
 	}
 	
 	public static String greetings() {
@@ -45,8 +51,8 @@ public class Talspelet {
 	public static int easyDifficulty() {
 		Random rand = new Random();
 		if(whatDifficulty==1) {
-			int n = rand.nextInt(5+1);
-			return n;
+			easyDifficulty = rand.nextInt(5+1);
+			return easyDifficulty;
 		}
 		return 0;
 	}
@@ -54,8 +60,8 @@ public class Talspelet {
 	public static int mediumDifficulty() {
 		Random rand = new Random();
 		if(whatDifficulty==2) {
-			int n = rand.nextInt(10+1);
-			return n;
+			mediumDifficulty = rand.nextInt(10+1);
+			return mediumDifficulty;
 		}
 		return 0;
 	}
@@ -63,17 +69,24 @@ public class Talspelet {
 	public static int hardDifficulty() {
 		Random rand = new Random();
 		if(whatDifficulty==3) {
-			int n = rand.nextInt(20+1);
-			return n;
+			hardDifficulty = rand.nextInt(20+1);
+			return hardDifficulty;
 		}
 		return 0;
 	}
+	
+	public static String startGuessing() {
+		String startGuessing = "Your Guess:";
+		return startGuessing;
+	}
+	
 	/*
-	public static void errorMessage() {
+	public static int numberOfGuesses() {
 		
 	}
 	
-	public static int numberGenerator() {
+	
+	public static void errorMessage() {
 		
 	}
 	
