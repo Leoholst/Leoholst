@@ -26,6 +26,10 @@ public class Talspelet {
 		}
 		System.out.println(System.lineSeparator() + startGuessing());
 		yourGuesses = input.nextInt();
+		
+		if(easyDifficulty||mediumDifficulty||hardDifficulty == yourGuesses) {
+			
+		}
 	}
 	
 	public static String greetings() {
@@ -80,12 +84,11 @@ public class Talspelet {
 		return startGuessing;
 	}
 	
-	/*
 	public static int numberOfGuesses() {
 		
 	}
 	
-	
+	/*
 	public static void errorMessage() {
 		
 	}
