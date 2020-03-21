@@ -9,11 +9,39 @@ public class Talspelet {
 	public static int hardDifficulty = 0;
 	public static int yourGuesses = 0;
 	public static boolean youWon = false;
+	public static int goAgain = 0;
+	public static boolean wantToPlayAgain = true;
+	public static boolean quit = false;
+	public static int wantToQuit = 0;
 	
 	public static void main(String[] args) {
 		System.out.println(greetings());
 		System.out.println(System.lineSeparator() + instructions());
 		System.out.println(System.lineSeparator() + difficultyInformation());
+		game();
+		/*
+		while(quit == false) {
+			if( == true) {
+				System.out.println(System.lineSeparator() + playAgain());
+				goAgain = input.nextInt();
+			}
+			if(goAgain == 1) {
+				game();
+			}
+			else if(goAgain == 2) {
+				wantToPlayAgain = false;
+			}
+			if(wantToPlayAgain == false) {
+				System.out.println(goQuit());
+			}
+			if(wantToQuit == 1) {
+				quit = true;
+			}
+			
+		}*/
+	}
+	
+	public static void game() {
 		System.out.println(System.lineSeparator() + chooseDifficulty());
 		whatDifficulty = input.nextInt();
 		
@@ -44,7 +72,10 @@ public class Talspelet {
 		else if(youWon == true) {
 			System.out.println(System.lineSeparator() + congratulations());
 		}
-		System.out.println(System.lineSeparator() + playAgain());
+	}
+	
+	public static void againOrQuit() {
+		
 	}
 	
 	public static String greetings() {
@@ -105,7 +136,7 @@ public class Talspelet {
 	}
 	
 	public static String condolences() {
-		String condolences = "That is not right... Try again!";
+		String condolences = "That is not right...";
 		return condolences;
 	}
 	
@@ -119,6 +150,11 @@ public class Talspelet {
 		return playAgain;
 	}
 	
+	public static String goQuit() {
+		String wantToQuit = "Do you want to Quit?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
+		return wantToQuit;
+	}
+	
 	/*
 	public static int numberOfGuesses() {
 		
@@ -128,24 +164,5 @@ public class Talspelet {
 	public static void errorMessage() {
 		
 	}
-	
-	public static int numberOfGuesses() {
-		
-	}
-	
-	public static String congratulations() {
-		
-	}
-	
-	public static String condolences() {
-		
-	}
-	
-	public static int doYouWantToQuit() {
-		
-	}
-	
-	public static int doYouWantToGoAgain() {
-		
-	}*/
+	*/
 }
