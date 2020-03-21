@@ -8,6 +8,7 @@ public class Talspelet {
 	public static int mediumDifficulty = 0;
 	public static int hardDifficulty = 0;
 	public static int yourGuesses = 0;
+	public static boolean youWon = false;
 	
 	public static void main(String[] args) {
 		System.out.println(greetings());
@@ -26,23 +27,24 @@ public class Talspelet {
 			System.out.println(System.lineSeparator() + hardDifficulty());
 		}
 		
-		System.out.println(System.lineSeparator() + startGuessing());
-		yourGuesses = input.nextInt();
-		for(int i = 0; i < 2; i++) {
+		for(int i = 0; i < 3; i++) {
+			System.out.println(System.lineSeparator() + startGuessing());
+			yourGuesses = input.nextInt();
 			if((easyDifficulty == yourGuesses)||(mediumDifficulty == yourGuesses)||(hardDifficulty == yourGuesses)) {
-				System.out.println(System.lineSeparator() + congratulations());
+				youWon = true;
 				break;
 			}
 			else if((easyDifficulty != yourGuesses)||(mediumDifficulty != yourGuesses)||(hardDifficulty != yourGuesses)) {
 				System.out.println(System.lineSeparator() + condolences());
-				System.out.println(System.lineSeparator() + startGuessing());
-				yourGuesses = input.nextInt();
 			}
 		}
-		if((yourGuesses != easyDifficulty)||(yourGuesses != mediumDifficulty)||(yourGuesses != hardDifficulty)) {
+		if(youWon == false) {
 			System.out.println(System.lineSeparator() + youLose());
 		}
-		
+		else if(youWon == true) {
+			System.out.println(System.lineSeparator() + congratulations());
+		}
+		System.out.println(System.lineSeparator() + playAgain());
 	}
 	
 	public static String greetings() {
@@ -98,7 +100,7 @@ public class Talspelet {
 	}
 	
 	public static String congratulations() {
-		String congratulations = "Ding! Ding! Ding! You have guessed the right number!";
+		String congratulations = "Ding! Ding! Ding! Congratulations! You have guessed the right number!";
 		return congratulations;
 	}
 	
@@ -110,6 +112,11 @@ public class Talspelet {
 	public static String youLose() {
 		String youLose = "Oh no... It seems you have run out of guesses and lost!";
 		return youLose;
+	}
+	
+	public static String playAgain() {
+		String playAgain = "Do want to play again?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
+		return playAgain;
 	}
 	
 	/*
