@@ -15,6 +15,7 @@ public class Talspelet {
 		System.out.println(System.lineSeparator() + difficultyInformation());
 		System.out.println(System.lineSeparator() + chooseDifficulty());
 		whatDifficulty = input.nextInt();
+		
 		if(whatDifficulty==1) {
 			System.out.println(System.lineSeparator() + easyDifficulty());
 		}
@@ -24,12 +25,24 @@ public class Talspelet {
 		else if(whatDifficulty==3){
 			System.out.println(System.lineSeparator() + hardDifficulty());
 		}
+		
 		System.out.println(System.lineSeparator() + startGuessing());
 		yourGuesses = input.nextInt();
-		
-		if((easyDifficulty == yourGuesses)||(mediumDifficulty == yourGuesses)||(hardDifficulty == yourGuesses)) {
-			
+		for(int i = 0; i < 2; i++) {
+			if((easyDifficulty == yourGuesses)||(mediumDifficulty == yourGuesses)||(hardDifficulty == yourGuesses)) {
+				System.out.println(System.lineSeparator() + congratulations());
+				break;
+			}
+			else if((easyDifficulty != yourGuesses)||(mediumDifficulty != yourGuesses)||(hardDifficulty != yourGuesses)) {
+				System.out.println(System.lineSeparator() + condolences());
+				System.out.println(System.lineSeparator() + startGuessing());
+				yourGuesses = input.nextInt();
+			}
 		}
+		if((yourGuesses != easyDifficulty)||(yourGuesses != mediumDifficulty)||(yourGuesses != hardDifficulty)) {
+			System.out.println(System.lineSeparator() + youLose());
+		}
+		
 	}
 	
 	public static String greetings() {
@@ -38,7 +51,7 @@ public class Talspelet {
 	}
 	
 	public static String instructions() {
-		String instructions = "Instructions" + System.lineSeparator() + "First off you are going to choose a difficulty, there are three different settings to choose from ranging from easy to hard." + System.lineSeparator() + "After that comes the guessing part! Simply write one number from inside the difficulties range. If you write the wrong one you have to guess again." + System.lineSeparator() + "In order to win you just have to guess the right number, easy right? But watch out! You only have three tries before you run out of guesses and lose!";
+		String instructions = "Instructions" + System.lineSeparator() + "First off you are going to choose a difficulty. There are three different settings to choose from, ranging from easy to hard." + System.lineSeparator() + "After that comes the guessing part! Simply write one number from inside the difficulties range. If you write the wrong one you have to guess again." + System.lineSeparator() + "In order to win you just have to guess the right number, easy right? But watch out! You only have three tries before you run out of guesses and lose!";
 		return instructions;
 	}
 	
@@ -84,11 +97,27 @@ public class Talspelet {
 		return startGuessing;
 	}
 	
+	public static String congratulations() {
+		String congratulations = "Ding! Ding! Ding! You have guessed the right number!";
+		return congratulations;
+	}
+	
+	public static String condolences() {
+		String condolences = "That is not right... Try again!";
+		return condolences;
+	}
+	
+	public static String youLose() {
+		String youLose = "Oh no... It seems you have run out of guesses and lost!";
+		return youLose;
+	}
+	
+	/*
 	public static int numberOfGuesses() {
 		
 	}
 	
-	/*
+	
 	public static void errorMessage() {
 		
 	}
