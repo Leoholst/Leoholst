@@ -241,7 +241,7 @@ public class Talspelet {
 	/**
 	 * Jag tänkte göra en metod som helt enkelt kommer in istället för error meddelandet som konsolen ger.
 	 * Jag använde if-satser och skrev ifall int variablarna mottar en input som inte är ett godtagbart svar.
-	 * Tyvärr fungerade inte detta som jag tänkte.
+	 * Tyvärr fungerade inte detta som jag tänkte, istället adderar den ihop det eftersom jag använde plustecken.
 	 */
 	public static void errorChecker() {
 		if(whatDifficulty != 1 + 2 + 3) {
