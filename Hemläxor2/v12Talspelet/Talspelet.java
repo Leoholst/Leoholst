@@ -174,9 +174,43 @@ public class Talspelet {
 		return exitMessage;
 	}
 	
-	/*
-	public static void errorMessage() {
-		
+	public static void errorChecker() {
+		if(whatDifficulty != 1 + 2 + 3) {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(yourGuesses != 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20) {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(goAgain != 1 + 2) {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(wantToQuit != 1 + 2) {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(whatDifficulty == 'a' + 'b' + 'c' + 'd' + 'e' + 'f' + 'g' + 'h' + 'i' + 'j' + 'k' + 'l' + 'm' + 'n' + 'o' + 'p' + 'q' + 'r' + 's' + 't' + 'u' + 'v' + 'w' + 'z' + 'y' + 'x' + 'å' + 'ä' + 'ö') {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(yourGuesses == 'a' + 'b' + 'c' + 'd' + 'e' + 'f' + 'g' + 'h' + 'i' + 'j' + 'k' + 'l' + 'm' + 'n' + 'o' + 'p' + 'q' + 'r' + 's' + 't' + 'u' + 'v' + 'w' + 'z' + 'y' + 'x' + 'å' + 'ä' + 'ö') {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(goAgain == 'a' + 'b' + 'c' + 'd' + 'e' + 'f' + 'g' + 'h' + 'i' + 'j' + 'k' + 'l' + 'm' + 'n' + 'o' + 'p' + 'q' + 'r' + 's' + 't' + 'u' + 'v' + 'w' + 'z' + 'y' + 'x' + 'å' + 'ä' + 'ö') {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
+		else if(wantToQuit == 'a' + 'b' + 'c' + 'd' + 'e' + 'f' + 'g' + 'h' + 'i' + 'j' + 'k' + 'l' + 'm' + 'n' + 'o' + 'p' + 'q' + 'r' + 's' + 't' + 'u' + 'v' + 'w' + 'z' + 'y' + 'x' + 'å' + 'ä' + 'ö') {
+			System.out.println(errorMessage());
+			againOrQuit();
+		}
 	}
-	*/
+	
+	public static String errorMessage() {
+		String errorMessage = "I'm sorry I can't accept that answer, you're gonna have to try again.";
+		return errorMessage;
+	}
 }
