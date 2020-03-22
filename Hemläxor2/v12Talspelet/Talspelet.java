@@ -19,29 +19,18 @@ public class Talspelet {
 		System.out.println(System.lineSeparator() + instructions());
 		System.out.println(System.lineSeparator() + difficultyInformation());
 		game();
-		/*
-		while(quit == false) {
-			if( == true) {
-				System.out.println(System.lineSeparator() + playAgain());
-				goAgain = input.nextInt();
-			}
-			if(goAgain == 1) {
-				game();
-			}
-			else if(goAgain == 2) {
-				wantToPlayAgain = false;
-			}
-			if(wantToPlayAgain == false) {
-				System.out.println(goQuit());
-			}
-			if(wantToQuit == 1) {
-				quit = true;
-			}
-			
-		}*/
+		againOrQuit();
+		
 	}
 	
 	public static void game() {
+		whatDifficulty = 0;
+		easyDifficulty = 0;
+		mediumDifficulty = 0;
+		hardDifficulty = 0;
+		yourGuesses = 0;
+		youWon = false;
+		
 		System.out.println(System.lineSeparator() + chooseDifficulty());
 		whatDifficulty = input.nextInt();
 		
@@ -75,7 +64,31 @@ public class Talspelet {
 	}
 	
 	public static void againOrQuit() {
+		goAgain = 0;
+		wantToPlayAgain = true;
+		quit = false;
+		wantToQuit = 0;
 		
+		while(quit == false) {
+			System.out.println(System.lineSeparator() + playAgain());
+			goAgain = input.nextInt();
+			
+			if(goAgain == 1) {
+				game();
+			}
+			else if(goAgain == 2) {
+				wantToPlayAgain = false;
+			}
+			if(wantToPlayAgain == false) {
+				System.out.println(goQuit());
+			}
+			if(wantToQuit == 1) {
+				quit = true;
+			}
+			else if(wantToQuit == 2) {
+				game();
+			}
+		}
 	}
 	
 	public static String greetings() {
