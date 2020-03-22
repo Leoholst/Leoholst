@@ -72,7 +72,6 @@ public class Talspelet {
 		while(quit == false) {
 			System.out.println(System.lineSeparator() + playAgain());
 			goAgain = input.nextInt();
-			
 			if(goAgain == 1) {
 				game();
 			}
@@ -80,9 +79,11 @@ public class Talspelet {
 				wantToPlayAgain = false;
 			}
 			if(wantToPlayAgain == false) {
-				System.out.println(goQuit());
+				System.out.println(System.lineSeparator() + goQuit());
+				wantToQuit = input.nextInt();
 			}
 			if(wantToQuit == 1) {
+				System.out.println(exitMessage());
 				quit = true;
 			}
 			else if(wantToQuit == 2) {
@@ -168,12 +169,12 @@ public class Talspelet {
 		return wantToQuit;
 	}
 	
-	/*
-	public static int numberOfGuesses() {
-		
+	public static String exitMessage() {
+		String exitMessage = "Please hold, game exiting...";
+		return exitMessage;
 	}
 	
-	
+	/*
 	public static void errorMessage() {
 		
 	}
