@@ -49,6 +49,12 @@ public class Talspelet {
 			}
 			else if((easyDifficulty != yourGuesses)||(mediumDifficulty != yourGuesses)||(hardDifficulty != yourGuesses)) {
 				System.out.println(System.lineSeparator() + wrongAnswer());
+				if(yourGuesses < easyDifficulty || yourGuesses < mediumDifficulty || yourGuesses < hardDifficulty) {
+					System.out.println("Talet är högre.");
+				}
+				else if(yourGuesses > easyDifficulty || yourGuesses > mediumDifficulty || yourGuesses > hardDifficulty) {
+					System.out.println("Talet är lägre.");
+				}
 			}
 		}
 		if(youWon == false) {
