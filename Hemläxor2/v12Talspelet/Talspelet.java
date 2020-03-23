@@ -50,10 +50,10 @@ public class Talspelet {
 			else if((easyDifficulty != yourGuesses)||(mediumDifficulty != yourGuesses)||(hardDifficulty != yourGuesses)) {
 				System.out.println(System.lineSeparator() + wrongAnswer());
 				if(yourGuesses < easyDifficulty || yourGuesses < mediumDifficulty || yourGuesses < hardDifficulty) {
-					System.out.println("Talet är högre.");
+					System.out.println(numberHigher());
 				}
 				else if(yourGuesses > easyDifficulty || yourGuesses > mediumDifficulty || yourGuesses > hardDifficulty) {
-					System.out.println("Talet är lägre.");
+					System.out.println(numberLower());
 				}
 			}
 		}
@@ -94,7 +94,7 @@ public class Talspelet {
 				wantToQuit = input.nextInt();
 			}
 			if(wantToQuit == 1) {
-				System.out.println(exitMessage());
+				System.out.println(System.lineSeparator() + exitMessage());
 				quit = true;
 			}
 			else if(wantToQuit == 2) {
@@ -242,6 +242,24 @@ public class Talspelet {
 	public static String exitMessage() {
 		String exitMessage = "Please hold, game exiting...";
 		return exitMessage;
+	}
+	
+	/**
+	 * String numberLower berättar för spelaren att talet är lägre än det man precis gissade på.
+	 * @return skickar tillbaka numberLower.
+	 */
+	public static String numberLower() {
+		String numberLower = "Hint, It's lower";
+		return numberLower;
+	}
+	
+	/**
+	 * String numberLower berättar för spelaren att talet är lägre än det man precis gissade på.
+	 * @return skickar tillbaka numberHigher.
+	 */
+	public static String numberHigher() {
+		String numberHigher = "Hint, It's higher";
+		return numberHigher;
 	}
 	
 	/**
