@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="repetion"/>
 	<classpathentry kind="src" path="bonusUppgifter"/>
 	<classpathentry kind="src" path="v12Talspelet"/>
+	<classpathentry kind="src" path="v18Hängagubben"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
