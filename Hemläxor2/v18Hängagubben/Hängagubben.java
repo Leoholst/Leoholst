@@ -1,7 +1,9 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Hängagubben {
 	public static Scanner input = new Scanner(System.in);
+	public static boolean difficulty = true;
 	
 	
 	public static void main(String[] args) {
@@ -39,7 +41,6 @@ public class Hängagubben {
 	
 	public static void chooseDifficulty() {
 		int whichDifficulty = input.nextInt();
-		boolean difficulty = true;
 		
 		if (whichDifficulty == 1) {
 			difficulty = true;
@@ -49,15 +50,33 @@ public class Hängagubben {
 		}
 		
 	}
-	/*
+	
 	public static String setEasyDifficulty() {
+		ArrayList<String> easyWords = new ArrayList<String>();
+		easyWords.add("BILAR");
+		easyWords.add("HUS");
+		easyWords.add("BORD");
+		easyWords.add("MATTA");
+		easyWords.add("BRÖD");
 		
+		if(difficulty == true) {
+			
+		}
 	}
 	
 	public static String setHardDifficulty() {
+		ArrayList<String> hardWords = new ArrayList<String>();
+		hardWords.add("TAKFÖNSTER");
+		hardWords.add("GLÖDLAMPA");
+		hardWords.add("TOALETTLOCK");
+		hardWords.add("NYÅRSKYCKLING");
+		hardWords.add("GAMMELFARFAR");
 		
+		if(difficulty == false) {
+			
+		}
 	}
-	
+	/*
 	public static char guess() {
 		
 	}
