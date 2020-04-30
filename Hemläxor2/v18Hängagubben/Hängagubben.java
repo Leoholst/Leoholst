@@ -11,6 +11,8 @@ public class Hängagubben {
 	public static void game() {
 		System.out.println(welcome());
 		System.out.println(System.lineSeparator() + instructions());
+		System.out.println(System.lineSeparator() + whatDifficulty());
+		chooseDifficulty();
 	}
 	
 	public static void againOrQuit() {
@@ -29,11 +31,25 @@ public class Hängagubben {
 		System.lineSeparator() + "There is two difficulties to choose from, easy and hard. Easy is shorter words while hard is longer.";
 		return instructions;
 	}
-	/*
-	public static int chooseDifficulty() {
-		
+	
+	public static String whatDifficulty() {
+		String whatDifficulty = "Choose your desired difficulty!" + System.lineSeparator() + "(1) Easy" + System.lineSeparator() + "(2) Hard";
+		return whatDifficulty;
 	}
 	
+	public static void chooseDifficulty() {
+		int whichDifficulty = input.nextInt();
+		boolean difficulty = true;
+		
+		if (whichDifficulty == 1) {
+			difficulty = true;
+		}
+		else if (whichDifficulty == 2) {
+			difficulty = false;
+		}
+		
+	}
+	/*
 	public static String setEasyDifficulty() {
 		
 	}
@@ -47,7 +63,8 @@ public class Hängagubben {
 	}
 	
 	public static char rightGuess() {
-		
+		Character.isLetter('c');
+		Character.isLetter('5');
 	}
 	
 	public static char wrongGuess() {
