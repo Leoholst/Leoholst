@@ -4,8 +4,10 @@ import java.util.Random;
 
 public class Hängagubben {
 	public static Scanner input = new Scanner(System.in);
-	public static boolean difficulty = true;
-	
+	public static boolean difficulty;
+	public static ArrayList<String> easyWords = new ArrayList<String>();
+	public static ArrayList<String> hardWords = new ArrayList<String>();
+	public static char guess;
 	
 	public static void main(String[] args) {
 		game();
@@ -18,6 +20,7 @@ public class Hängagubben {
 		chooseDifficulty();
 		setEasyDifficulty();
 		setHardDifficulty();
+		guess();
 	}
 	
 	public static void againOrQuit() {
@@ -55,7 +58,6 @@ public class Hängagubben {
 	}
 	
 	public static void setEasyDifficulty() {
-		ArrayList<String> easyWords = new ArrayList<String>();
 		easyWords.add("BILAR");
 		easyWords.add("HUS");
 		easyWords.add("BORD");
@@ -89,7 +91,6 @@ public class Hängagubben {
 	}
 	
 	public static void setHardDifficulty() {
-		ArrayList<String> hardWords = new ArrayList<String>();
 		hardWords.add("TAKFÖNSTER");
 		hardWords.add("GLÖDLAMPA");
 		hardWords.add("TOALETTLOCK");
@@ -121,11 +122,12 @@ public class Hängagubben {
 			}
 		}
 	}
-	/*
-	public static char guess() {
-		
-	}
 	
+	public static char guess() {
+		char guess = input.next().charAt(0);
+		return guess;
+	}
+	/*
 	public static char rightGuess() {
 		Character.isLetter('c');
 		Character.isLetter('5');
