@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Hängagubben {
 	public static Scanner input = new Scanner(System.in);
@@ -15,6 +16,8 @@ public class Hängagubben {
 		System.out.println(System.lineSeparator() + instructions());
 		System.out.println(System.lineSeparator() + whatDifficulty());
 		chooseDifficulty();
+		setEasyDifficulty();
+		setHardDifficulty();
 	}
 	
 	public static void againOrQuit() {
@@ -51,7 +54,7 @@ public class Hängagubben {
 		
 	}
 	
-	public static String setEasyDifficulty() {
+	public static void setEasyDifficulty() {
 		ArrayList<String> easyWords = new ArrayList<String>();
 		easyWords.add("BILAR");
 		easyWords.add("HUS");
@@ -59,12 +62,33 @@ public class Hängagubben {
 		easyWords.add("MATTA");
 		easyWords.add("BRÖD");
 		
+		Random randomNumber = new Random();
 		if(difficulty == true) {
-			
+			int whatWord = randomNumber.nextInt(5);
+			if(whatWord == 0) {
+				System.out.println(easyWords.get(0));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 1) {
+				System.out.println(easyWords.get(1));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 2) {
+				System.out.println(easyWords.get(2));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 3) {
+				System.out.println(easyWords.get(3));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 4) {
+				System.out.println(easyWords.get(4));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
 		}
 	}
 	
-	public static String setHardDifficulty() {
+	public static void setHardDifficulty() {
 		ArrayList<String> hardWords = new ArrayList<String>();
 		hardWords.add("TAKFÖNSTER");
 		hardWords.add("GLÖDLAMPA");
@@ -72,8 +96,29 @@ public class Hängagubben {
 		hardWords.add("NYÅRSKYCKLING");
 		hardWords.add("GAMMELFARFAR");
 		
+		Random randomNumber = new Random();
 		if(difficulty == false) {
-			
+			int whatWord = randomNumber.nextInt(5);
+			if(whatWord == 0) {
+				System.out.println(hardWords.get(0));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 1) {
+				System.out.println(hardWords.get(1));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 2) {
+				System.out.println(hardWords.get(2));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 3) {
+				System.out.println(hardWords.get(3));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
+			else if(whatWord == 4) {
+				System.out.println(hardWords.get(4));
+				System.out.println("Your word has now been randomly generated, let the guessing begin!");
+			}
 		}
 	}
 	/*
