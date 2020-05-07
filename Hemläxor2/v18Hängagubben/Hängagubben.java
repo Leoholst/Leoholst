@@ -7,6 +7,9 @@ public class Hängagubben {
 	public static boolean difficulty;
 	public static ArrayList<String> easyWords = new ArrayList<String>();
 	public static ArrayList<String> hardWords = new ArrayList<String>();
+	public static int whatEasyWord = 0;
+	public static int whatHardWord = 0;
+	public static String secretWord;
 	public static char guess;
 	
 	public static void main(String[] args) {
@@ -21,6 +24,7 @@ public class Hängagubben {
 		setEasyDifficulty();
 		setHardDifficulty();
 		guess();
+		rightGuess();
 	}
 	
 	public static void againOrQuit() {
@@ -66,24 +70,24 @@ public class Hängagubben {
 		
 		Random randomNumber = new Random();
 		if(difficulty == true) {
-			int whatWord = randomNumber.nextInt(5);
-			if(whatWord == 0) {
+			whatEasyWord = randomNumber.nextInt(5);
+			if(whatEasyWord == 0) {
 				System.out.println(easyWords.get(0));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 1) {
+			else if(whatEasyWord == 1) {
 				System.out.println(easyWords.get(1));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 2) {
+			else if(whatEasyWord == 2) {
 				System.out.println(easyWords.get(2));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 3) {
+			else if(whatEasyWord == 3) {
 				System.out.println(easyWords.get(3));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 4) {
+			else if(whatEasyWord == 4) {
 				System.out.println(easyWords.get(4));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
@@ -99,24 +103,24 @@ public class Hängagubben {
 		
 		Random randomNumber = new Random();
 		if(difficulty == false) {
-			int whatWord = randomNumber.nextInt(5);
-			if(whatWord == 0) {
+			whatHardWord = randomNumber.nextInt(5);
+			if(whatHardWord == 0) {
 				System.out.println(hardWords.get(0));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 1) {
+			else if(whatHardWord == 1) {
 				System.out.println(hardWords.get(1));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 2) {
+			else if(whatHardWord == 2) {
 				System.out.println(hardWords.get(2));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 3) {
+			else if(whatHardWord == 3) {
 				System.out.println(hardWords.get(3));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
-			else if(whatWord == 4) {
+			else if(whatHardWord == 4) {
 				System.out.println(hardWords.get(4));
 				System.out.println("Your word has now been randomly generated, let the guessing begin!");
 			}
@@ -124,15 +128,71 @@ public class Hängagubben {
 	}
 	
 	public static char guess() {
-		char guess = input.next().charAt(0);
+		guess = input.next().charAt(0);
 		return guess;
 	}
-	/*
-	public static char rightGuess() {
-		Character.isLetter('c');
-		Character.isLetter('5');
-	}
 	
+	public static void rightGuess() {
+		/*
+		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
+		*/
+		if(whatEasyWord == 0) {
+			if(guess == easyWords.indexOf(easyWords.get(0))) {
+				char rightGuess = guess;
+				System.out.println(rightGuess);
+			}
+		}
+		else if(whatEasyWord == 1) {
+			if(guess == easyWords.indexOf(easyWords.get(1))) {
+				char rightGuess = guess;
+				System.out.println(rightGuess);
+			}
+		}
+		else if(whatEasyWord == 2) {
+			if(guess == easyWords.indexOf(easyWords.get(2))) {
+				char rightGuess = guess;
+				System.out.println(rightGuess);
+			}
+		}
+		else if(whatEasyWord == 3) {
+			if(guess == easyWords.indexOf(easyWords.get(3))) {
+				char rightGuess = guess;
+				System.out.println(rightGuess);
+			}
+		}
+		else if(whatEasyWord == 4) {
+			if(guess == easyWords.indexOf(easyWords.get(4))) {
+				char rightGuess = guess;
+				System.out.println(rightGuess);
+			}
+		}
+		if(whatHardWord == 0) {
+			if(guess == hardWords.indexOf(hardWords.get(0))) {
+				char rightGuess = guess;
+			}
+		}
+		else if(whatHardWord == 1) {
+			if(guess == hardWords.indexOf(hardWords.get(1))) {
+				char rightGuess = guess;
+			}
+		}
+		else if(whatHardWord == 2) {
+			if(guess == hardWords.indexOf(hardWords.get(2))) {
+				char rightGuess = guess;
+			}
+		}
+		else if(whatHardWord == 3) {
+			if(guess == hardWords.indexOf(hardWords.get(3))) {
+				char rightGuess = guess;
+			}
+		}
+		else if(whatHardWord == 4) {
+			if(guess == hardWords.indexOf(hardWords.get(4))) {
+				char rightGuess = guess;
+			}
+		}
+	}
+	/*
 	public static char wrongGuess() {
 		
 	}
