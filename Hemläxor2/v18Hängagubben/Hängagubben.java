@@ -23,6 +23,7 @@ public class Hängagubben {
 		chooseDifficulty();
 		setEasyDifficulty();
 		setHardDifficulty();
+		System.out.println(haveAGo());
 		guess();
 		rightGuess();
 	}
@@ -68,29 +69,10 @@ public class Hängagubben {
 		easyWords.add("MATTA");
 		easyWords.add("BRÖD");
 		
-		Random randomNumber = new Random();
 		if(difficulty == true) {
-			whatEasyWord = randomNumber.nextInt(5);
-			if(whatEasyWord == 0) {
-				System.out.println(easyWords.get(0));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatEasyWord == 1) {
-				System.out.println(easyWords.get(1));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatEasyWord == 2) {
-				System.out.println(easyWords.get(2));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatEasyWord == 3) {
-				System.out.println(easyWords.get(3));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatEasyWord == 4) {
-				System.out.println(easyWords.get(4));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
+			Random randomNumber = new Random();
+			int n = randomNumber.nextInt(easyWords.size());
+			secretWord = easyWords.get(n);
 		}
 	}
 	
@@ -101,30 +83,16 @@ public class Hängagubben {
 		hardWords.add("NYÅRSKYCKLING");
 		hardWords.add("GAMMELFARFAR");
 		
-		Random randomNumber = new Random();
 		if(difficulty == false) {
-			whatHardWord = randomNumber.nextInt(5);
-			if(whatHardWord == 0) {
-				System.out.println(hardWords.get(0));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatHardWord == 1) {
-				System.out.println(hardWords.get(1));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatHardWord == 2) {
-				System.out.println(hardWords.get(2));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatHardWord == 3) {
-				System.out.println(hardWords.get(3));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
-			else if(whatHardWord == 4) {
-				System.out.println(hardWords.get(4));
-				System.out.println("Your word has now been randomly generated, let the guessing begin!");
-			}
+			Random randomNumber = new Random();
+			int n = randomNumber.nextInt(hardWords.size());
+			secretWord = hardWords.get(n);
 		}
+	}
+	
+	public static String haveAGo() {
+		String HaveAGo = "Your Guess:";
+		return HaveAGo;
 	}
 	
 	public static char guess() {
@@ -136,60 +104,12 @@ public class Hängagubben {
 		/*
 		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
 		*/
-		if(whatEasyWord == 0) {
-			if(guess == easyWords.indexOf(easyWords.get(0))) {
-				char rightGuess = guess;
-				System.out.println(rightGuess);
-			}
+		if(guess == secretWord.charAt(0)){
+			char rightGuess = guess;
+			System.out.println(rightGuess);
 		}
-		else if(whatEasyWord == 1) {
-			if(guess == easyWords.indexOf(easyWords.get(1))) {
-				char rightGuess = guess;
-				System.out.println(rightGuess);
-			}
-		}
-		else if(whatEasyWord == 2) {
-			if(guess == easyWords.indexOf(easyWords.get(2))) {
-				char rightGuess = guess;
-				System.out.println(rightGuess);
-			}
-		}
-		else if(whatEasyWord == 3) {
-			if(guess == easyWords.indexOf(easyWords.get(3))) {
-				char rightGuess = guess;
-				System.out.println(rightGuess);
-			}
-		}
-		else if(whatEasyWord == 4) {
-			if(guess == easyWords.indexOf(easyWords.get(4))) {
-				char rightGuess = guess;
-				System.out.println(rightGuess);
-			}
-		}
-		if(whatHardWord == 0) {
-			if(guess == hardWords.indexOf(hardWords.get(0))) {
-				char rightGuess = guess;
-			}
-		}
-		else if(whatHardWord == 1) {
-			if(guess == hardWords.indexOf(hardWords.get(1))) {
-				char rightGuess = guess;
-			}
-		}
-		else if(whatHardWord == 2) {
-			if(guess == hardWords.indexOf(hardWords.get(2))) {
-				char rightGuess = guess;
-			}
-		}
-		else if(whatHardWord == 3) {
-			if(guess == hardWords.indexOf(hardWords.get(3))) {
-				char rightGuess = guess;
-			}
-		}
-		else if(whatHardWord == 4) {
-			if(guess == hardWords.indexOf(hardWords.get(4))) {
-				char rightGuess = guess;
-			}
+		else {
+			System.out.println("No");
 		}
 	}
 	/*
