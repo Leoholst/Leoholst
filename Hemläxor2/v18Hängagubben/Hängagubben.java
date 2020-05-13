@@ -7,10 +7,9 @@ public class Hängagubben {
 	public static boolean difficulty;
 	public static ArrayList<String> easyWords = new ArrayList<String>();
 	public static ArrayList<String> hardWords = new ArrayList<String>();
-	public static int whatEasyWord = 0;
-	public static int whatHardWord = 0;
 	public static String secretWord;
 	public static char guess;
+	public static int maxGuesses;
 	
 	public static void main(String[] args) {
 		game();
@@ -23,9 +22,19 @@ public class Hängagubben {
 		chooseDifficulty();
 		setEasyDifficulty();
 		setHardDifficulty();
-		System.out.println(haveAGo());
-		guess();
-		rightGuess();
+		guessingLoop();
+	}
+	
+	public static void guessingLoop() {
+		for(int i=0; i<(secretWord.length()); i++) {
+			System.out.println(haveAGo());
+			guess();
+			rightGuessCheck();
+		}
+	}
+	
+	public static void variabelReset() {
+		
 	}
 	
 	public static void againOrQuit() {
@@ -71,8 +80,8 @@ public class Hängagubben {
 		
 		if(difficulty == true) {
 			Random randomNumber = new Random();
-			int n = randomNumber.nextInt(easyWords.size());
-			secretWord = easyWords.get(n);
+			int chosenWord = randomNumber.nextInt(easyWords.size());
+			secretWord = easyWords.get(chosenWord);
 		}
 	}
 	
@@ -85,8 +94,8 @@ public class Hängagubben {
 		
 		if(difficulty == false) {
 			Random randomNumber = new Random();
-			int n = randomNumber.nextInt(hardWords.size());
-			secretWord = hardWords.get(n);
+			int chosenWord = randomNumber.nextInt(hardWords.size());
+			secretWord = hardWords.get(chosenWord);
 		}
 	}
 	
@@ -100,16 +109,23 @@ public class Hängagubben {
 		return guess;
 	}
 	
-	public static void rightGuess() {
+	public static void rightGuessCheck() {
 		/*
 		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
 		*/
-		if(guess == secretWord.charAt(0)){
-			char rightGuess = guess;
-			System.out.println(rightGuess);
-		}
-		else {
-			System.out.println("No");
+		while(maxGuesses<11) {
+			for(int limit=0; limit<12; limit++){
+				if(guess == secretWord.charAt(limit)){
+					char rightGuess = guess;
+					System.out.println(rightGuess);
+					guessingLoop();
+				}
+				else {
+					System.out.println("Not quite right");
+					maxGuesses =+ 1;
+					guessingLoop();
+				}
+			}
 		}
 	}
 	/*
