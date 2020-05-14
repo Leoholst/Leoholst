@@ -24,20 +24,17 @@ public class Hängagubben {
 		setHardDifficulty();
 		haveAGo();
 		guess();
-		rightGuessCheck();
-		/*
 		guessingLoop();
-		*/
 	}
-	/*
+	
 	public static void guessingLoop() {
-		for(int i=0; i<(secretWord.length()); i++) {
-			System.out.println(haveAGo());
-			guess();
-			rightGuessCheck();
+		while(maxGuesses <= 10) {
+			rightGuessEasyWordsCheck();
+			rightGuessHardWordsCheck();
+			//Bryt denna while-loopen vid rätt svar.
 		}
 	}
-	*/
+
 	public static void variabelReset() {
 		
 	}
@@ -115,19 +112,15 @@ public class Hängagubben {
 		return guess;
 	}
 	
-	public static void rightGuessCheck() {
+	public static void rightGuessEasyWordsCheck() {
 		/*
 		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
 		*/
 		char firstLetter = ' ';
 		char secondLetter = ' ';
 		char thirdLetter = ' ';
-		char fourthLetter = ' ';
-		char fifthLetter = ' ';
 		boolean always = true;
-		/*
-		while(maxGuesses<11) {
-		*/	
+	
 		if(difficulty == true) {
 			while(always == true) {
 					if(guess == secretWord.charAt(0)) {
@@ -179,16 +172,23 @@ public class Hängagubben {
 						}
 					}
 					else {
-						System.out.println("Nej, Ascii konst på gubben");
+						hangman();
+						maxGuesses =+ 1;
 					}
-					/*
-					maxGuesses =+ 1;
-					 */
-				
-					haveAGo();
-					guess();
-			}			
-		}
+				haveAGo();
+				guess();
+				}			
+			}
+		}			
+	
+	public static void rightGuessHardWordsCheck() {
+		char firstLetter = ' ';
+		char secondLetter = ' ';
+		char thirdLetter = ' ';
+		char fourthLetter = ' ';
+		char fifthLetter = ' ';
+		boolean always = true;
+		
 		if(difficulty == false) {
 			while(always == true) {
 				if(guess == secretWord.charAt(0)) {
@@ -452,16 +452,30 @@ public class Hängagubben {
 					}
 				}
 				else {
-					System.out.println("Nej, Ascii konst på gubben");
+					hangman();
+					maxGuesses =+ 1;
 				}
-				/*
-				maxGuesses =+ 1;
-				 */
-				haveAGo();
-				guess();
-			}			
+			haveAGo();
+			guess();
+			}
+		}	
+	}
+	
+	public static void hangman() {
+		if(maxGuesses == 0) {
+			System.out.println("Ascii");
 		}
-	}		
+		else if(maxGuesses == 1) {
+			System.out.println("Ascii-1");
+		}
+		else if(maxGuesses == 2) {
+			System.out.println("Ascii-2");
+		}
+		else if(maxGuesses == 3) {
+			System.out.println("Ascii-3");
+		}
+	}
+	
 	/*
 	public static void winChecker() {
 		
