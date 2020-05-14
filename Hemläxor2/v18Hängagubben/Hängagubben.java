@@ -22,9 +22,14 @@ public class Hängagubben {
 		chooseDifficulty();
 		setEasyDifficulty();
 		setHardDifficulty();
+		haveAGo();
+		guess();
+		rightGuessCheck();
+		/*
 		guessingLoop();
+		*/
 	}
-	
+	/*
 	public static void guessingLoop() {
 		for(int i=0; i<(secretWord.length()); i++) {
 			System.out.println(haveAGo());
@@ -32,7 +37,7 @@ public class Hängagubben {
 			rightGuessCheck();
 		}
 	}
-	
+	*/
 	public static void variabelReset() {
 		
 	}
@@ -72,36 +77,37 @@ public class Hängagubben {
 	}
 	
 	public static void setEasyDifficulty() {
-		easyWords.add("BILAR");
+		easyWords.add("BIL");
 		easyWords.add("HUS");
-		easyWords.add("BORD");
-		easyWords.add("MATTA");
-		easyWords.add("BRÖD");
+		easyWords.add("BAD");
+		easyWords.add("MAT");
+		easyWords.add("BRA");
 		
 		if(difficulty == true) {
 			Random randomNumber = new Random();
 			int chosenWord = randomNumber.nextInt(easyWords.size());
 			secretWord = easyWords.get(chosenWord);
+			System.out.println(secretWord);
 		}
 	}
 	
 	public static void setHardDifficulty() {
-		hardWords.add("TAKFÖNSTER");
-		hardWords.add("GLÖDLAMPA");
-		hardWords.add("TOALETTLOCK");
-		hardWords.add("NYÅRSKYCKLING");
-		hardWords.add("GAMMELFARFAR");
+		hardWords.add("TAVLA");
+		hardWords.add("FRISK");
+		hardWords.add("TJOCK");
+		hardWords.add("MATTA");
+		hardWords.add("TOMAT");
 		
 		if(difficulty == false) {
 			Random randomNumber = new Random();
 			int chosenWord = randomNumber.nextInt(hardWords.size());
 			secretWord = hardWords.get(chosenWord);
+			System.out.println(secretWord);
 		}
 	}
 	
-	public static String haveAGo() {
-		String HaveAGo = "Your Guess:";
-		return HaveAGo;
+	public static void haveAGo() {
+		System.out.println("Your Guess:");
 	}
 	
 	public static char guess() {
@@ -113,23 +119,115 @@ public class Hängagubben {
 		/*
 		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
 		*/
+		/*
 		while(maxGuesses<11) {
-			for(int limit=0; limit<12; limit++){
-				if(guess == secretWord.charAt(limit)){
-					char rightGuess = guess;
-					System.out.println(rightGuess);
-					guessingLoop();
+		*/	
+		char firstLetter = ' ';
+		char secondLetter = ' ';
+		char thirdLetter = ' ';
+		char fourthLetter = ' ';
+		char fifthLetter = ' ';
+		
+		if(difficulty == true) {
+			for(int i=0; i<secretWord.length(); i++){
+				if(guess == secretWord.charAt(i)){
+					if(guess == secretWord.charAt(0)) {
+						firstLetter = guess;
+						if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							break;
+						}
+						else if(secondLetter == secretWord.charAt(1)) {
+							System.out.println(firstLetter + " " + secondLetter + " _");
+						}
+						else if(thirdLetter == secretWord.charAt(2)) {
+							System.out.println(firstLetter + " _ " + thirdLetter);
+						}
+						else {
+						System.out.println(firstLetter + " _ " + " _");
+						}
+					}
+					else if(guess == secretWord.charAt(1)) {
+						secondLetter = guess;
+						if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2)) {
+							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							break;
+						}
+						else if(firstLetter == secretWord.charAt(0)) {
+							System.out.println(firstLetter + " " + secondLetter + " _");
+						}
+						else if(thirdLetter == secretWord.charAt(2)) {
+							System.out.println("_ " + secondLetter + " " + thirdLetter);
+						}
+						else {
+						System.out.println("_ " + secondLetter + " _");
+						}
+					}
+					else if(guess == secretWord.charAt(2)) {
+						thirdLetter = guess;
+						if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1)) {
+							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							break;
+						}
+						else if(firstLetter == secretWord.charAt(0)) {
+							System.out.println(firstLetter + " _ " + thirdLetter);
+						}
+						else if(secondLetter == secretWord.charAt(1)) {
+							System.out.println("_ " + secondLetter + " " + thirdLetter);
+						}
+						else {
+							System.out.println("_ " + " _ " + thirdLetter);
+						}
+					}
 				}
 				else {
-					System.out.println("Not quite right");
+					System.out.println("Nej, Ascii konst på gubben");
+					/*
 					maxGuesses =+ 1;
-					guessingLoop();
+					*/
 				}
+			haveAGo();
+			guess();
 			}
 		}
+		if(difficulty == false) {
+			for(int i=0; i<secretWord.length(); i++){
+				if(guess == secretWord.charAt(i)){
+					if(guess == secretWord.charAt(0)) {
+						firstLetter = guess;
+						System.out.println(firstLetter);
+					}
+					if(guess == secretWord.charAt(1)) {
+						secondLetter = guess;
+						System.out.println(secondLetter);
+					}
+					if(guess == secretWord.charAt(2)) {
+						thirdLetter = guess;
+						System.out.println(thirdLetter);
+					}
+					if(guess == secretWord.charAt(3)) {
+						fourthLetter = guess;
+						System.out.println(fourthLetter);
+					}
+					if(guess == secretWord.charAt(4)) {
+						fifthLetter = guess;
+						System.out.println(fifthLetter);
+					}
+				}
+				else {
+					System.out.println("Nej, Ascii konst på gubben");
+					maxGuesses =+ 1;
+				}
+			haveAGo();
+			guess();
+			}
+		}
+		/*	
+		}
+		*/
 	}
 	/*
-	public static char wrongGuess() {
+	public static void winChecker() {
 		
 	}
 	
