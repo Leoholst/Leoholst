@@ -92,11 +92,11 @@ public class Hängagubben {
 	}
 	
 	public static void setHardDifficulty() {
-		hardWords.add("TAVLA");
+		hardWords.add("PIANO");
 		hardWords.add("FRISK");
 		hardWords.add("TJOCK");
-		hardWords.add("MATTA");
-		hardWords.add("TOMAT");
+		hardWords.add("TJENA");
+		hardWords.add("BYXOR");
 		
 		if(difficulty == false) {
 			Random randomNumber = new Random();
@@ -119,18 +119,17 @@ public class Hängagubben {
 		/*
 		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
 		*/
-		/*
-		while(maxGuesses<11) {
-		*/	
 		char firstLetter = ' ';
 		char secondLetter = ' ';
 		char thirdLetter = ' ';
 		char fourthLetter = ' ';
 		char fifthLetter = ' ';
-		
+		boolean always = true;
+		/*
+		while(maxGuesses<11) {
+		*/	
 		if(difficulty == true) {
-			for(int i=0; i<secretWord.length(); i++){
-				if(guess == secretWord.charAt(i)){
+			while(always == true) {
 					if(guess == secretWord.charAt(0)) {
 						firstLetter = guess;
 						if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
@@ -144,7 +143,7 @@ public class Hängagubben {
 							System.out.println(firstLetter + " _ " + thirdLetter);
 						}
 						else {
-						System.out.println(firstLetter + " _ " + " _");
+							System.out.println(firstLetter + " _ " + " _");
 						}
 					}
 					else if(guess == secretWord.charAt(1)) {
@@ -160,7 +159,7 @@ public class Hängagubben {
 							System.out.println("_ " + secondLetter + " " + thirdLetter);
 						}
 						else {
-						System.out.println("_ " + secondLetter + " _");
+							System.out.println("_ " + secondLetter + " _");
 						}
 					}
 					else if(guess == secretWord.charAt(2)) {
@@ -179,53 +178,290 @@ public class Hängagubben {
 							System.out.println("_ " + " _ " + thirdLetter);
 						}
 					}
-				}
-				else {
-					System.out.println("Nej, Ascii konst på gubben");
+					else {
+						System.out.println("Nej, Ascii konst på gubben");
+					}
 					/*
 					maxGuesses =+ 1;
-					*/
-				}
-			haveAGo();
-			guess();
-			}
+					 */
+				
+					haveAGo();
+					guess();
+			}			
 		}
 		if(difficulty == false) {
-			for(int i=0; i<secretWord.length(); i++){
-				if(guess == secretWord.charAt(i)){
-					if(guess == secretWord.charAt(0)) {
-						firstLetter = guess;
-						System.out.println(firstLetter);
+			while(always == true) {
+				if(guess == secretWord.charAt(0)) {
+					firstLetter = guess;
+					if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						break;
 					}
-					if(guess == secretWord.charAt(1)) {
-						secondLetter = guess;
-						System.out.println(secondLetter);
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
 					}
-					if(guess == secretWord.charAt(2)) {
-						thirdLetter = guess;
-						System.out.println(thirdLetter);
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
 					}
-					if(guess == secretWord.charAt(3)) {
-						fourthLetter = guess;
-						System.out.println(fourthLetter);
+					else if(secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
 					}
-					if(guess == secretWord.charAt(4)) {
-						fifthLetter = guess;
-						System.out.println(fifthLetter);
+					else if(thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + " _ " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + " _ " + " _");
+					}
+					else if(thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " _ " + " _");
+					}
+					else if(fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " _ " + " _ " + fourthLetter + " _");
+					}
+					else if(fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + " _ " + " _ " + fifthLetter);
+					}
+					else {
+						System.out.println(firstLetter + " _ " + " _ " + " _ " + " _");
+					}
+				}
+				else if(guess == secretWord.charAt(1)) {
+					secondLetter = guess;
+					if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						break;
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + " _ " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + " _ " + " _");
+					}
+					else if(thirdLetter == secretWord.charAt(2)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " _ " + " _");
+					}
+					else if(fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + secondLetter + " _ " + fourthLetter + " _");
+					}
+					else if(fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " _ " + " _ " + fifthLetter);
+					}
+					else {
+						System.out.println("_ " + secondLetter + " _ " + " _ " + " _");
+					}
+				}
+				else if(guess == secretWord.charAt(2)) {
+					thirdLetter = guess;
+					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						break;
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " _ " + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " _ " + " _");
+					}
+					else if(fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + " _ " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + " _ " + thirdLetter + " _ " + fifthLetter);
+					}					
+					else {
+						System.out.println("_ " + " _ " + thirdLetter + " _ " + " _");
+					}
+				}
+				else if(guess == secretWord.charAt(3)) {
+					fourthLetter = guess;
+					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						break;
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(firstLetter == secretWord.charAt(0) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println(firstLetter + " _ " + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}					
+					else if(firstLetter == secretWord.charAt(0)) {
+						System.out.println(firstLetter + " _ " + " _ " + fourthLetter + " _");
+					}
+					else if(secondLetter == secretWord.charAt(1)) {
+						System.out.println("_ " + secondLetter + " _ " + fourthLetter + " _");
+					}
+					else if(thirdLetter == secretWord.charAt(2)) {
+						System.out.println("_ " + " _ " + thirdLetter + " " + fourthLetter + " _");
+					}
+					else if(fifthLetter == secretWord.charAt(4)) {
+						System.out.println("_ " + " _ " + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else {
+						System.out.println("_ " + " _ " + " _ " + fourthLetter + " _");
+					}
+				}
+				else if(guess == secretWord.charAt(4)) {
+					fifthLetter = guess;
+					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						break;
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1)) {
+						System.out.println(firstLetter + " " + secondLetter + " _ " + " _ " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println(firstLetter + " _ " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(firstLetter == secretWord.charAt(0) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println(firstLetter + " _ " + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
+						System.out.println("_ " + secondLetter + " " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + secondLetter + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + " _ " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+					}					
+					else if(firstLetter == secretWord.charAt(0)) {
+						System.out.println(firstLetter + " _ " + " _ " + " _ " + fifthLetter);
+					}
+					else if(secondLetter == secretWord.charAt(1)) {
+						System.out.println("_ " + secondLetter + " _ " + " _ " + fifthLetter);
+					}
+					else if(thirdLetter == secretWord.charAt(2)) {
+						System.out.println("_ " + " _ " + thirdLetter + " _ " + fifthLetter);
+					}
+					else if(fourthLetter == secretWord.charAt(3)) {
+						System.out.println("_ " + " _ " + " _ " + fourthLetter + " " + fifthLetter);
+					}
+					else {
+						System.out.println("_ " + " _ " + " _ " + " _ " + fifthLetter);
 					}
 				}
 				else {
 					System.out.println("Nej, Ascii konst på gubben");
-					maxGuesses =+ 1;
 				}
-			haveAGo();
-			guess();
-			}
+				/*
+				maxGuesses =+ 1;
+				 */
+				haveAGo();
+				guess();
+			}			
 		}
-		/*	
-		}
-		*/
-	}
+	}		
 	/*
 	public static void winChecker() {
 		
