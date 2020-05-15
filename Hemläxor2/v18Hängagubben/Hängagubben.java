@@ -10,14 +10,18 @@ public class Hängagubben {
 	public static String secretWord;
 	public static char guess;
 	public static int maxGuesses;
+	public static boolean wordGuessed = false;
+	public static int goAgain = 0;
+	public static boolean wantToPlayAgain = true;
+	public static boolean quit = false;
+	public static int wantToQuit = 0;
 	
 	public static void main(String[] args) {
+		welcomeAndRules();
 		game();
 	}
 	
 	public static void game() {
-		System.out.println(welcome());
-		System.out.println(System.lineSeparator() + instructions());
 		System.out.println(System.lineSeparator() + whatDifficulty());
 		chooseDifficulty();
 		setEasyDifficulty();
@@ -25,13 +29,34 @@ public class Hängagubben {
 		haveAGo();
 		guess();
 		guessingLoop();
+		winChecker();
+		againOrQuit();
+	}
+	
+	public static void welcomeAndRules() {
+		System.out.println(welcome());
+		System.out.println(System.lineSeparator() + instructions());
 	}
 	
 	public static void guessingLoop() {
 		while(maxGuesses <= 6) {
 			rightGuessEasyWordsCheck();
+			if(wordGuessed == true) {
+				break;
+			}
 			rightGuessHardWordsCheck();
-			//Bryt denna while-loopen vid rätt svar.
+			if(wordGuessed == true) {
+				break;
+			}
+		}
+	}
+	
+	public static void winChecker() {
+		if(wordGuessed == true) {
+			System.out.println(youWin());
+		}
+		else if(wordGuessed == false) {
+			System.out.println(youLose());
 		}
 	}
 
@@ -40,7 +65,27 @@ public class Hängagubben {
 	}
 	
 	public static void againOrQuit() {
-		
+		while(quit == false) {
+			System.out.println(System.lineSeparator() + playAgain());
+			goAgain = input.nextInt();
+			if(goAgain == 1) {
+				game();
+			}
+			else if(goAgain == 2) {
+				wantToPlayAgain = false;
+			}
+			if(wantToPlayAgain == false) {
+				System.out.println(System.lineSeparator() + goQuit());
+				wantToQuit = input.nextInt();
+			}
+			if(wantToQuit == 1) {
+				System.out.println(System.lineSeparator() + exitMessage());
+				quit = true;
+			}
+			else if(wantToQuit == 2) {
+				game();
+			}
+		}
 	}
 	
 	public static String welcome() {
@@ -127,6 +172,7 @@ public class Hängagubben {
 						firstLetter = guess;
 						if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
 							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							wordGuessed = true;
 							break;
 						}
 						else if(secondLetter == secretWord.charAt(1)) {
@@ -143,6 +189,7 @@ public class Hängagubben {
 						secondLetter = guess;
 						if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2)) {
 							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							wordGuessed = true;
 							break;
 						}
 						else if(firstLetter == secretWord.charAt(0)) {
@@ -159,6 +206,7 @@ public class Hängagubben {
 						thirdLetter = guess;
 						if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1)) {
 							System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter);
+							wordGuessed = true;
 							break;
 						}
 						else if(firstLetter == secretWord.charAt(0)) {
@@ -180,7 +228,6 @@ public class Hängagubben {
 				guess();
 				}
 				}
-			//Anropa youWin eller youLose
 			}
 		}			
 	
@@ -197,6 +244,7 @@ public class Hängagubben {
 					firstLetter = guess;
 					if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
 						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						wordGuessed = true;
 						break;
 					}
 					else if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
@@ -249,6 +297,7 @@ public class Hängagubben {
 					secondLetter = guess;
 					if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
 						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						wordGuessed = true;
 						break;
 					}
 					else if(firstLetter == secretWord.charAt(0) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
@@ -301,6 +350,7 @@ public class Hängagubben {
 					thirdLetter = guess;
 					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
 						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						wordGuessed = true;
 						break;
 					}
 					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && fourthLetter == secretWord.charAt(3)) {
@@ -353,6 +403,7 @@ public class Hängagubben {
 					fourthLetter = guess;
 					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fifthLetter == secretWord.charAt(4)) {
 						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						wordGuessed = true;
 						break;
 					}
 					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
@@ -405,6 +456,7 @@ public class Hängagubben {
 					fifthLetter = guess;
 					if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3)) {
 						System.out.println(firstLetter + " " + secondLetter + " " + thirdLetter + " " + fourthLetter + " " + fifthLetter);
+						wordGuessed = true;
 						break;
 					}
 					else if(firstLetter == secretWord.charAt(0) && secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
@@ -532,17 +584,28 @@ public class Hängagubben {
 		}
 	}
 	
-	/*
-	public static void winChecker() {
-		
-	}
-	
 	public static String youWin() {
-		
+		String youWin = System.lineSeparator() + "Congratulations! You have succesfully guessed the right word!";
+		return youWin;
 	}
 	
 	public static String youLose() {
-		
+		String youLose = System.lineSeparator() + "No! You didn't guess the word and the man was hanged!";
+		return youLose;
 	}
-	*/
+	
+	public static String playAgain() {
+		String playAgain = System.lineSeparator() + "Do want to play again?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
+		return playAgain;
+	}
+	
+	public static String goQuit() {
+		String goQuit = System.lineSeparator() + "Do you want to quit?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
+		return goQuit;
+	}
+	
+	public static String exitMessage() {
+		String exitMessage = System.lineSeparator() + "Please hold, game shutting down...";
+		return exitMessage;
+	}
 }
