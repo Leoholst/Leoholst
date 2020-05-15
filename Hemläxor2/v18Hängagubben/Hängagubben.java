@@ -28,7 +28,7 @@ public class Hängagubben {
 	}
 	
 	public static void guessingLoop() {
-		while(maxGuesses <= 10) {
+		while(maxGuesses <= 6) {
 			rightGuessEasyWordsCheck();
 			rightGuessHardWordsCheck();
 			//Bryt denna while-loopen vid rätt svar.
@@ -104,11 +104,12 @@ public class Hängagubben {
 	}
 	
 	public static void haveAGo() {
-		System.out.println("Your Guess:");
+		System.out.println(System.lineSeparator() + "Your Guess:");
 	}
 	
 	public static char guess() {
 		guess = input.next().charAt(0);
+		guess = Character.toUpperCase(guess);
 		return guess;
 	}
 	
@@ -119,10 +120,9 @@ public class Hängagubben {
 		char firstLetter = ' ';
 		char secondLetter = ' ';
 		char thirdLetter = ' ';
-		boolean always = true;
 	
 		if(difficulty == true) {
-			while(always == true) {
+			while(maxGuesses <= 6) {
 					if(guess == secretWord.charAt(0)) {
 						firstLetter = guess;
 						if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2)) {
@@ -173,11 +173,14 @@ public class Hängagubben {
 					}
 					else {
 						hangman();
-						maxGuesses =+ 1;
+						maxGuesses += 1;
 					}
+				if(maxGuesses <= 6) {
 				haveAGo();
 				guess();
-				}			
+				}
+				}
+			//Anropa youWin eller youLose
 			}
 		}			
 	
@@ -187,10 +190,9 @@ public class Hängagubben {
 		char thirdLetter = ' ';
 		char fourthLetter = ' ';
 		char fifthLetter = ' ';
-		boolean always = true;
 		
 		if(difficulty == false) {
-			while(always == true) {
+			while(maxGuesses <= 6) {
 				if(guess == secretWord.charAt(0)) {
 					firstLetter = guess;
 					if(secondLetter == secretWord.charAt(1) && thirdLetter == secretWord.charAt(2) && fourthLetter == secretWord.charAt(3) && fifthLetter == secretWord.charAt(4)) {
@@ -453,26 +455,80 @@ public class Hängagubben {
 				}
 				else {
 					hangman();
-					maxGuesses =+ 1;
+					maxGuesses += 1;
 				}
-			haveAGo();
-			guess();
+			if(maxGuesses <= 6) {
+				haveAGo();
+				guess();
 			}
+			}
+		//Anropa youWin eller youLose
 		}	
 	}
 	
 	public static void hangman() {
 		if(maxGuesses == 0) {
-			System.out.println("Ascii");
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
 		}
 		else if(maxGuesses == 1) {
-			System.out.println("Ascii-1");
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
 		}
 		else if(maxGuesses == 2) {
-			System.out.println("Ascii-2");
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					"  |   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
 		}
 		else if(maxGuesses == 3) {
-			System.out.println("Ascii-3");
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if(maxGuesses == 4) {
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if(maxGuesses == 5) {
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					" /    |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if(maxGuesses == 6) {
+			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					" / \\  |\r\n" + 
+					"      |\r\n" + 
+					"=========");
 		}
 	}
 	
