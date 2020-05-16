@@ -97,8 +97,11 @@ public class Hängagubben {
 	 * bestämmer om variabelReset och sedan game eller om goQuit ska anropas, goQuit följs av
 	 * ytterligare en int som tas in, som bestämmer om quit ska bli true och while loopen bryts
 	 * och spelet stängs av, eller om variabelReset och game ska anropas.
+	 * Metoden består också av try och catch som om det uppstår ett error meddelande,
+	 * skriver ut vad spelaren ska skriva för att det ska bli rätt.
 	 */
 	public static void againOrQuit() {
+		try {
 		while(quit == false) {
 			System.out.println(System.lineSeparator() + playAgain());
 			goAgain = input.nextInt();
@@ -121,6 +124,10 @@ public class Hängagubben {
 				variabelReset();
 				game();
 			}
+		}
+		}
+		catch(Exception notRight) {
+			System.out.println("That's not right, you're supposed to write 1 or 2.");
 		}
 	}
 	
@@ -157,8 +164,10 @@ public class Hängagubben {
 	/** Denna metod tar in spelarens svar från förra metoden och förverkligar det.
 	 * int whichDifficulty tar in en int från konsollen
 	 * Detta heltal bestämmer i sin tur om den globala variabeln difficulty ska bli true eller false.
+	 * Metoden består också av try och catch och fungerar på samma sätt som i metoden innan.
 	 */
 	public static void chooseDifficulty() {
+		try {
 		int whichDifficulty = 0;
 		whichDifficulty = input.nextInt();
 		
@@ -168,7 +177,10 @@ public class Hängagubben {
 		else if (whichDifficulty == 2) {
 			difficulty = false;
 		}
-		
+		}
+		catch(Exception notRight) {
+			System.out.println("That's wrong, you're supposed to write either 1 or 2.");
+		}
 	}
 	
 	/** Denna metod slumpar det enkla ordet som spelaren ska gissa på
@@ -224,12 +236,18 @@ public class Hängagubben {
 	 * globala char Guess Tar in en bokstav från konsollen som är spelarens gissning
 	 * m.h.a. .toUpperCase görs gissningen till stor bokstav 
 	 * eftersom orden är skrivna i stora bokstäver och de ska jämföras i kommande metoder
+	 * Metoden består också av try och catch och fungerar på samma sätt som i metoden tidigare.
 	 * @return char Guess
 	 */
 	public static char guess() {
+		try {
 		guess = input.next().charAt(0);
 		guess = Character.toUpperCase(guess);
 		return guess;
+		}
+		catch(Exception notRight) {
+			System.out.println("That's not right, you're supposed to write a letter.");
+		}
 	}
 	
 	/** Denna metoden jämför gissingen med rätt svar m.m.
