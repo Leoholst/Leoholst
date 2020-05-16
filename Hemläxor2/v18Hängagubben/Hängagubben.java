@@ -213,10 +213,19 @@ public class Hängagubben {
 		}
 	}
 	
+	/** Denna metoden förklarar att spelaren ska gissa
+	 * Det enda denna metoden gör är att förtydliga att spelaren ska gissa 
+	 */
 	public static void haveAGo() {
 		System.out.println(System.lineSeparator() + "Your Guess:");
 	}
 	
+	/** Denna metoden 
+	 * globala char Guess Tar in en bokstav från konsollen som är spelarens gissning
+	 * m.h.a. .toUpperCase görs gissningen till stor bokstav 
+	 * eftersom orden är skrivna i stora bokstäver och de ska jämföras i kommande metoder
+	 * @return char Guess
+	 */
 	public static char guess() {
 		guess = input.next().charAt(0);
 		guess = Character.toUpperCase(guess);
