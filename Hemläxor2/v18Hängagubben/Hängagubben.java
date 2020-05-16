@@ -626,6 +626,11 @@ public class Hängagubben {
 		}	
 	}
 	
+	/** Denna metoden består av ascii konst som porträtterar gubben som hängs
+	 * Denna metoden anropas om gissningen inte är rätt i de två förra metoderna
+	 * För varje fel gissning skriver denna metod ut ny ascii konst, som
+	 * får det att se ut som om ett streck ritas på gubben tills den är hängd.
+	 */
 	public static void hangman() {
 		if(maxGuesses == 0) {
 			System.out.println(System.lineSeparator() + "  +---+\r\n" + 
@@ -692,6 +697,11 @@ public class Hängagubben {
 		}
 	}
 	
+	/** Denna metoden gratulerar spelaren när den vinner.
+	 * Det enda denna metoden gör är att skriva ut ett grattis meddelande till spelaren efter att den har vunnit.
+	 * String youWin är ett grattis meddelande
+	 * @return String youWin
+	 */
 	public static String youWin() {
 		String youWin = System.lineSeparator() + "Congratulations! You have succesfully guessed the right word!";
 		return youWin;
