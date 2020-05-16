@@ -40,12 +40,18 @@ public class Hängagubben {
 		againOrQuit();
 	}
 	
-	
+	/** Denna metoden fungerar som en mellanhand.
+	 * Allt denna metoden gör är att skriva ut två andra metoder.
+	 */
 	public static void welcomeAndRules() {
 		System.out.println(welcome());
 		System.out.println(System.lineSeparator() + instructions());
 	}
 	
+	/** Denna metoden utgör gissnings delen av spelet.
+	 * Metoden består av en while loop som itererar så länge maxGuesses är lika med eller under 6, eller om wordGuessed är false.
+	 * Den anropar även två andra metoder.
+	 */
 	public static void guessingLoop() {
 		while(maxGuesses <= 6) {
 			rightGuessEasyWordsCheck();
