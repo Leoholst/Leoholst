@@ -79,7 +79,8 @@ public class Hängagubben {
 	}
 
 	/** Denna metoden är till för att återställa de väsentliga variablerna
-	 * Detta är för att man ska kunna köra spelet igen flera gånger.
+	 * Detta är för att man ska kunna köra spelet igen flera gånger
+	 * Eftersom om variablerna inte återställs kan de påverka resultaten på nästa omgång.
 	 */
 	public static void variabelReset() {
 		maxGuesses = 0;
@@ -90,6 +91,13 @@ public class Hängagubben {
 		wantToQuit = 0;
 	}
 	
+	/** Denna metoden tar hand om delen där spelaren får välja om den vill köra igen.
+	 * Den består av en while-loop som itererar så länge quit är false.
+	 * Först anropas playAgain och sedan tas en int in från konsollen som m.h.a. en if-sats
+	 * bestämmer om variabelReset och sedan game eller om goQuit ska anropas, goQuit följs av
+	 * ytterligare en int som tas in, som bestämmer om quit ska bli true och while loopen bryts
+	 * och spelet stängs av, eller om variabelReset och game ska anropas.
+	 */
 	public static void againOrQuit() {
 		while(quit == false) {
 			System.out.println(System.lineSeparator() + playAgain());
