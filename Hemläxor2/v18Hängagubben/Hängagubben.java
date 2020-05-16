@@ -171,6 +171,13 @@ public class Hängagubben {
 		
 	}
 	
+	/** Denna metod slumpar det enkla ordet som spelaren ska gissa på
+	 * Först lägger jag till fem ord som utgör den globala ArrayList<String> easyWords med enkla ord.
+	 * Sedan beroende på om spelaren valde enkel svårighetsgrad, slumpar ett random heltal
+	 * m.h.a. Random(), vilket i enkelhet generar ett slumpat nummer i intervallet i ArrayListen, dvs. från 0-4.
+	 * Detta heltal tar sedan ut motsvarande index i ArrayList:en och
+	 * sätter sedan globala String secretWord till detta nu slumpade ordet.
+	 */
 	public static void setEasyDifficulty() {
 		easyWords.add("BIL");
 		easyWords.add("HUS");
@@ -182,10 +189,16 @@ public class Hängagubben {
 			Random randomNumber = new Random();
 			int chosenWord = randomNumber.nextInt(easyWords.size());
 			secretWord = easyWords.get(chosenWord);
-			System.out.println(secretWord);
 		}
 	}
 	
+	/** Denna metod slumpar det svåra ordet som spelaren ska gissa på
+	 * Först lägger jag till fem ord som utgör den globala ArrayList<String> hardWords med svåra ord.
+	 * Sedan beroende på om spelaren valde svår svårighetsgrad, slumpar ett random heltal
+	 * m.h.a. Random(), vilket i enkelhet generar ett slumpat nummer i intervallet i ArrayListen, dvs. från 0-4.
+	 * Detta heltal tar sedan ut motsvarande index i ArrayListen och
+	 * sätter sedan globala String secretWord till detta nu slumpade ordet.
+	 */
 	public static void setHardDifficulty() {
 		hardWords.add("PIANO");
 		hardWords.add("FRISK");
@@ -197,7 +210,6 @@ public class Hängagubben {
 			Random randomNumber = new Random();
 			int chosenWord = randomNumber.nextInt(hardWords.size());
 			secretWord = hardWords.get(chosenWord);
-			System.out.println(secretWord);
 		}
 	}
 	
