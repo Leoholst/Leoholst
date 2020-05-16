@@ -61,7 +61,12 @@ public class Hängagubben {
 	}
 
 	public static void variabelReset() {
-		
+		maxGuesses = 0;
+		wordGuessed = false;
+		quit = false;
+		goAgain = 0;
+		wantToPlayAgain = true;
+		wantToQuit = 0;
 	}
 	
 	public static void againOrQuit() {
@@ -69,6 +74,7 @@ public class Hängagubben {
 			System.out.println(System.lineSeparator() + playAgain());
 			goAgain = input.nextInt();
 			if(goAgain == 1) {
+				variabelReset();
 				game();
 			}
 			else if(goAgain == 2) {
@@ -83,6 +89,7 @@ public class Hängagubben {
 				quit = true;
 			}
 			else if(wantToQuit == 2) {
+				variabelReset();
 				game();
 			}
 		}
@@ -107,7 +114,8 @@ public class Hängagubben {
 	}
 	
 	public static void chooseDifficulty() {
-		int whichDifficulty = input.nextInt();
+		int whichDifficulty = 0;
+		whichDifficulty = input.nextInt();
 		
 		if (whichDifficulty == 1) {
 			difficulty = true;
