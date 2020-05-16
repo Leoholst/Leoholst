@@ -65,6 +65,10 @@ public class Hängagubben {
 		}
 	}
 	
+	/** Som namnet antyder kollar denna metoden om man har vunnit.
+	 * Om wordGuessed är true anropas youWin metoden
+	 * Medans om wordGuessed är false anropas youLose metoden.
+	 */
 	public static void winChecker() {
 		if(wordGuessed == true) {
 			System.out.println(youWin());
@@ -74,6 +78,9 @@ public class Hängagubben {
 		}
 	}
 
+	/** Denna metoden är till för att återställa de väsentliga variablerna
+	 * Detta är för att man ska kunna köra spelet igen flera gånger.
+	 */
 	public static void variabelReset() {
 		maxGuesses = 0;
 		wordGuessed = false;
