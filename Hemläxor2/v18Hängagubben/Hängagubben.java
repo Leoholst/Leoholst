@@ -16,11 +16,18 @@ public class Hängagubben {
 	public static boolean quit = false;
 	public static int wantToQuit = 0;
 	
+	/** Detta är main metoden
+	 * Jag ville inte ha för mycket kod i main metoden, därför anropar jag endast två andra metoder från main.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		welcomeAndRules();
 		game();
 	}
 	
+	/** Detta är huvudmetoden och fungerar som startrutan i hela spelet.
+	 * Denna metoden anropar metoderna som utgör spelet, i rätt ordning.
+	 */
 	public static void game() {
 		System.out.println(System.lineSeparator() + whatDifficulty());
 		chooseDifficulty();
@@ -32,6 +39,7 @@ public class Hängagubben {
 		winChecker();
 		againOrQuit();
 	}
+	
 	
 	public static void welcomeAndRules() {
 		System.out.println(welcome());
