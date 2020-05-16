@@ -707,11 +707,21 @@ public class Hängagubben {
 		return youWin;
 	}
 	
+	/** Denna metoden berättar för spelaren att den har förlorat.
+	 * Det enda denna metoden gör är att skriva ut ett meddelande som säger att spelaren förlorade
+	 * String youLose är ett meddelande där det förklaras att spelaren förlorade.
+	 * @return String youLose
+	 */
 	public static String youLose() {
 		String youLose = System.lineSeparator() + "No! You didn't guess the word and the man was hanged!";
 		return youLose;
 	}
 	
+	/** Denna metoden frågar spelaren om den vill köra igen.
+	 * Spelaren får frågan om den vill köra igen.
+	 * String playAgain är en fråga som följs upp av två svarsalternativ.
+	 * @return String playAgain
+	 */
 	public static String playAgain() {
 		String playAgain = System.lineSeparator() + "Do want to play again?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
 		return playAgain;
