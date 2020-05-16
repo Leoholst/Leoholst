@@ -145,11 +145,19 @@ public class Hängagubben {
 		return instructions;
 	}
 	
+	/** Denna metoden ger spelaren ett val om vilken svårighetsgrad den vill ha
+	 * String whatDifficulty ställer frågan om vilken svårighetsgrad spelaren vill ha, antingen enkel eller svår
+	 * @return String whatDifficulty
+	 */
 	public static String whatDifficulty() {
 		String whatDifficulty = "Choose your desired difficulty!" + System.lineSeparator() + "(1) Easy" + System.lineSeparator() + "(2) Hard";
 		return whatDifficulty;
 	}
 	
+	/** Denna metod tar in spelarens svar från förra metoden och förverkligar det.
+	 * int whichDifficulty tar in en int från konsollen
+	 * Detta heltal bestämmer i sin tur om den globala variabeln difficulty ska bli true eller false.
+	 */
 	public static void chooseDifficulty() {
 		int whichDifficulty = 0;
 		whichDifficulty = input.nextInt();
