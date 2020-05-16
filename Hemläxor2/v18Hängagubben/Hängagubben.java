@@ -124,12 +124,20 @@ public class Hängagubben {
 		}
 	}
 	
+	/** welcome är en metod som hälsar spelaren välkommen
+	 * String playerGreeting som välkommnar spelaren och förklarar vad spelet går ut på.
+	 * @return String playerGreeting
+	 */
 	public static String welcome() {
 		String playerGreeting = "Welcome to Hangman! In this game you will be guessing letters in an unknown word, sounds simple enough? " +
         System.lineSeparator()  + "Well watch out, with every letter you guess wrong one line will be drawn on the man until he is hanged and you lose!";
 		return playerGreeting;
 	}
 	
+	/** Denna metoden förklarar reglerna för spelaren
+	 * String instructions som endast förklarar reglerna
+	 * @return String instructions
+	 */
 	public static String instructions() {
 		String instructions = "The rules are easy, simply write a letter and you will either see it pop up in the word or see a line being drawn." +
 		System.lineSeparator() + "When the man is hanged you lose! But when you have guessed all the letters in the word you win!" + 
