@@ -220,7 +220,7 @@ public class Hängagubben {
 		System.out.println(System.lineSeparator() + "Your Guess:");
 	}
 	
-	/** Denna metoden 
+	/** Denna metoden tar in spelarens gissning och gör den till stor bokstav.
 	 * globala char Guess Tar in en bokstav från konsollen som är spelarens gissning
 	 * m.h.a. .toUpperCase görs gissningen till stor bokstav 
 	 * eftersom orden är skrivna i stora bokstäver och de ska jämföras i kommande metoder
@@ -232,10 +232,25 @@ public class Hängagubben {
 		return guess;
 	}
 	
+	/** Denna metoden jämför gissingen med rätt svar m.m.
+	 * Denna metoden är här gissningen kollas om den är rätt eller fel
+	 * Metoden består av en if-sats som är tröskeln för hela metoden och går att passera
+	 * om spelaren valde enkel svårighetsgrad.
+	 * Sedan kommer en while-loop som itererar medans maxguesses är lika med eller under 6, 
+	 * dvs. medans spelaren fortfarande har gissningar kvar.
+	 * Det som följer är en mängd av if-, else if- och else-satser, där vid varje sats jämförs gissningen 
+	 * med antingen första, andra, tredje bokstaven i ordet. 
+	 * Sedan dubbelkollar programmet även om de andra bokstäverna i ordet redan har gissats rätt på,
+	 * om varken en eller alla har det skrivs den eller de ut på sina rätta platser.
+	 * Sedan om hela ordet har skrivits ut sätts wordGuessed till true som bryter 
+	 * while-loopen i metoden guessingLoop(), och bryter while-loopen.
+	 * Om gissningen inte stämmer anropas hangMan metoden och maxGuesses adderas med 1 tills den blir 7 och while-loopen bryts, 
+	 * även while-loopen i metoden guessingLoop(). 
+	 * char firstLetter är första bokstaven i ordet.
+	 * char secondLetter är andra bokstaven i ordet.
+	 * char thirdLetter är trejde bokstaven i ordet.
+	 */
 	public static void rightGuessEasyWordsCheck() {
-		/*
-		Character.isLetter('a'&'b'&'c'&'d'&'e'&'f'&'g'&'h'&'i'&'j'&'k'&'l'&'m'&'n'&'o'&'p'&'q'&'r'&'s'&'t'&'u'&'v'&'w'&'x'&'y'&'z'&'å'&'ä'&'ö');
-		*/
 		char firstLetter = ' ';
 		char secondLetter = ' ';
 		char thirdLetter = ' ';
@@ -305,6 +320,26 @@ public class Hängagubben {
 			}
 		}			
 	
+	/** Denna metoden jämför gissningen med rätt svar m.m.
+	 * Denna metoden är här gissningen kollas om den är rätt eller fel
+	 * Metoden består av en if-sats som är tröskeln för hela metoden och går att passera
+	 * om spelaren valde svår svårighetsgrad.
+	 * Sedan kommer en while-loop som itererar medans maxguesses är lika med eller under 6, 
+	 * dvs. medans spelaren fortfarande har gissningar kvar.
+	 * Det som följer är en mängd av if-, else if- och else-satser, där vid varje sats jämförs gissningen 
+	 * med antingen första, andra, tredje, fjärde eller femte bokstaven i ordet.
+	 * Sedan dubbelkollar programmet även om de andra bokstäverna i ordet redan har gissats rätt på,
+	 * om varken en eller alla har det skrivs den eller de ut på sina rätta platser.
+	 * Sedan om hela ordet har skrivits ut sätts wordGuessed till true som bryter 
+	 * while-loopen i metoden guessingLoop(), och bryter while-loopen.
+	 * Om gissningen inte stämmer anropas hangMan metoden och maxGuesses adderas med 1 tills den blir 7 och while-loopen bryts, 
+	 * även while-loopen i metoden guessingLoop().
+	 * char firstLetter är första bokstaven i ordet.
+	 * char secondLetter är andra bokstaven i ordet.
+	 * char thirdLetter är trejde bokstaven i ordet.
+	 * char fourthLetter är fjärde bokstaven i ordet.
+	 * char fifthLetter är femte bokstaven i ordet.
+	 */
 	public static void rightGuessHardWordsCheck() {
 		char firstLetter = ' ';
 		char secondLetter = ' ';
@@ -588,7 +623,6 @@ public class Hängagubben {
 				guess();
 			}
 			}
-		//Anropa youWin eller youLose
 		}	
 	}
 	
