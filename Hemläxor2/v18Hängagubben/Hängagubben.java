@@ -727,11 +727,21 @@ public class Hängagubben {
 		return playAgain;
 	}
 	
+	/** Denna metoden frågar spelaren om den vill avsluta.
+	 * Spelaren får frågan om den vill avsluta.
+	 * String goQuit är en fråga som följs upp av två svarsalternativ.
+	 * @return String goQuit
+	 */
 	public static String goQuit() {
 		String goQuit = System.lineSeparator() + "Do you want to quit?" + System.lineSeparator() + "(1) Yes" + System.lineSeparator() + "(2) No";
 		return goQuit;
 	}
 	
+	/** Denna metoden förtydligar för spelaren att spelet stängs av.
+	 * Istället för att spelet stängs av utan vidare, ges nu spelaren ett meddelande som berättar just det.
+	 * String exitMessage förklarar för spelaren att spelet stänger av.
+	 * @return String extMessage
+	 */
 	public static String exitMessage() {
 		String exitMessage = System.lineSeparator() + "Please hold, game shutting down...";
 		return exitMessage;
