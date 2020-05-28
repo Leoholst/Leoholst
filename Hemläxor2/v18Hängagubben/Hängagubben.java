@@ -99,35 +99,30 @@ public class Hängagubben {
 	 * och spelet stängs av, eller om variabelReset och game ska anropas.
 	 * Metoden består också av try och catch som om det uppstår ett error meddelande,
 	 * skriver ut vad spelaren ska skriva för att det ska bli rätt.
+	 * Jag använder input.next() för att det är en bugg i programmet när man använder .nextInt() vilket jag gör
+	 * tidigare i metoden. Denna tomma .next() syns inte i output:en utan den bara hoppas över.
+	 * Sedan avslutar jag catch med att anropa metoden som vi är i.
 	 */
 	public static void againOrQuit() {
 		try {
-		while(quit == false) {
-			System.out.println(System.lineSeparator() + playAgain());
-			goAgain = input.nextInt();
-			if(goAgain == 1) {
-				variabelReset();
-				game();
+			while(quit == false) {
+				System.out.println(System.lineSeparator() + playAgain());
+				goAgain = input.nextInt();
+				if(goAgain == 1) {
+					variabelReset();
+					game();
+				}
+				else if(goAgain == 2) {
+				
+					System.out.println(System.lineSeparator() + exitMessage());
+					quit = true;
+				}
 			}
-			else if(goAgain == 2) {
-				wantToPlayAgain = false;
-			}
-			if(wantToPlayAgain == false) {
-				System.out.println(System.lineSeparator() + goQuit());
-				wantToQuit = input.nextInt();
-			}
-			if(wantToQuit == 1) {
-				System.out.println(System.lineSeparator() + exitMessage());
-				quit = true;
-			}
-			else if(wantToQuit == 2) {
-				variabelReset();
-				game();
-			}
-		}
 		}
 		catch(Exception notRight) {
 			System.out.println("That's not right, you're supposed to write 1 or 2.");
+			input.next();
+			againOrQuit();
 		}
 	}
 	
@@ -165,21 +160,26 @@ public class Hängagubben {
 	 * int whichDifficulty tar in en int från konsollen
 	 * Detta heltal bestämmer i sin tur om den globala variabeln difficulty ska bli true eller false.
 	 * Metoden består också av try och catch och fungerar på samma sätt som i metoden innan.
+	 * Jag använder input.next() för att det är en bugg i programmet när man använder .nextInt() vilket jag gör
+	 * tidigare i metoden. Denna tomma .next() syns inte i output:en utan den bara hoppas över.
+	 * Sedan avslutar jag catch med att anropa två metoder varav den andra är samma metod vi är i.
 	 */
 	public static void chooseDifficulty() {
 		try {
 		int whichDifficulty = 0;
 		whichDifficulty = input.nextInt();
-		
-		if (whichDifficulty == 1) {
-			difficulty = true;
-		}
-		else if (whichDifficulty == 2) {
-			difficulty = false;
-		}
+			if (whichDifficulty == 1) {
+				difficulty = true;
+			}
+			else if (whichDifficulty == 2) {
+				difficulty = false;
+			}
 		}
 		catch(Exception notRight) {
 			System.out.println("That's wrong, you're supposed to write either 1 or 2.");
+			input.next();
+			System.out.println(System.lineSeparator() + whatDifficulty());
+			chooseDifficulty();
 		}
 	}
 	
@@ -239,15 +239,15 @@ public class Hängagubben {
 	 * Metoden består också av try och catch och fungerar på samma sätt som i metoden tidigare.
 	 * @return char Guess
 	 */
-	public static char guess() {
+	public static void guess() {
 		try {
-		guess = input.next().charAt(0);
-		guess = Character.toUpperCase(guess);
-		return guess;
+			guess = input.next().charAt(0);
 		}
 		catch(Exception notRight) {
 			System.out.println("That's not right, you're supposed to write a letter.");
+			
 		}
+		guess = Character.toUpperCase(guess);
 	}
 	
 	/** Denna metoden jämför gissingen med rätt svar m.m.
